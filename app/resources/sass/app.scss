@@ -1,0 +1,178 @@
+/*
+    Asatru PHP - app cascading stylesheets file
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Rubik&display=swap');
+
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main {
+    background-color: rgba(120, 178, 216, 0.5);
+}
+
+a {
+    color:rgb(34, 95, 145);
+}
+
+a:hover {
+    color:rgb(34, 95, 145);
+}
+
+.navbar-item img {
+    max-height: unset !important;
+}
+
+.navbar-brand img {
+    width: 42px;
+    height: 42px;
+}
+
+.header {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header-inner {
+    position: relative;
+    top: 12px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header-content {
+    width: 100%;
+    display: inline-block;
+    @media screen and (min-width: 768px) {
+        margin-top: 74px;
+    }
+    color: rgb(220, 220, 220);
+}
+
+.header-left {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    text-align: right;
+    margin-right: 20px;
+    @media screen and (max-width: 1103px) {
+        display: none;
+    }
+}
+
+.header-right {
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    @media screen and (max-width: 1386px) {
+        width: 50%;
+    }
+    @media screen and (max-width: 768px) {
+        width: 89%;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+.header-right p {
+    margin-bottom: 15px;
+}
+
+.content-padding {
+    @media screen and (min-width: 604px) {
+        padding-left: 135px;
+        padding-right: 74px;
+    }
+    @media screen and (max-width: 603px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.feature-cards {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.feature-card {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 45%;
+    @media screen and (max-width: 1591px) {
+        width: 100%;
+    }
+}
+
+.feature-card-left {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    vertical-align: top;
+}
+
+.feature-card-right {
+    position: relative;
+    display: inline-block;
+    width: 90%;
+}
+
+.other-downloads {
+    @media screen and (max-width: 768px) {
+        position: relative;
+        left: -12px;
+    }
+}
+
+.footer {
+    width: 100%;
+    color: rgb(150, 150, 150);
+    background-color: rgb(34, 96, 146);
+    padding: 1rem 1.5rem 1rem;
+}
+
+.footer-frame {
+    width: 100%;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.is-vertical-margin {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.is-font-title {
+    font-family: Quicksand, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.is-font-headline {
+    font-family: Rubik, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.is-pointer {
+    cursor: pointer;
+}
