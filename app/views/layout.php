@@ -74,7 +74,7 @@
 
 									<p>
 										AquaShell is a scripting and automation system for Windows operating systems.
-										It is used to automate Windows tasks via scripts similar to Batch/PS/AutoIt.
+										It is used to automate Windows tasks via scripts similar to Batch/PowerShell/AutoIt.
 									</p>
 
 									<p>
