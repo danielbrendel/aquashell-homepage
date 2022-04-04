@@ -1,13 +1,13 @@
 <!doctype html>
-<!--
-	Example layout file
--->
-<html>
+<html lang="{{ getLocale() }}">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-with, initial-scale=1.0">
+		<meta name="author" content="Daniel Brendel">
+		<meta name="description" content="AquaShell is a scripting and automation shell for Windows using dnyScriptInterpreter">
+		<meta name="tags" content="scripting, shell, automation, windows, x64, extendable">
 		
-		<title>AquaShell</title>
+		<title>AquaShell - A scripting and automation shell for Windows</title>
 
 		<link rel="icon" type="image/png" href="{{ asset('img/logo.png') }}"/>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/bulma.css') }}"/>
