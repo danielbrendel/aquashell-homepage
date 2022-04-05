@@ -17,9 +17,9 @@
                 <h3>Installation instructions</h3>
 
                 <ul>
-                    <li>Download the ZIP archive and extract it somewhere</li>
-                    <li>Run the setup executable and follow the guided installation</li>
-                    <li>You can now run script files with .dnys extension</li>
+                    <li>Download the ZIP archive and extract it to a persistent location</li>
+                    <li>Run the file_association.bat in order to register *.dnys files with AquaShell</li>
+                    <li>You can also launch dnyAquaShell.exe in order to use the interactive mode</li>
                     <li>Visit the <a href="{{ url('/documentation') }}">documentation</a> to see how to create scripts</li>
                 </ul>
             </p>
@@ -35,17 +35,17 @@
 
                     <tbody>
                         <tr>
-                            <td><font size="5">AquaShell portable</font><br/><font color="#646464">A portable version of AquaShell provided as ZIP archive</font></td>
-                            <td><a class="button is-link">Download</a></td>
-                        </tr>
-
-                        <tr>
                             <td><font size="5">AquaShell Plugin SDK</font><br/><font color="#646464">Use the C++ SDK to create your own native plugins</font></td>
                             <td><a class="button is-link">Download</a></td>
                         </tr>
 
                         <tr>
                             <td><font size="5">AquaShell sourcecode</font><br/><font color="#646464">If you want to have a quick look. GitHub is prefered for contributing</font></td>
+                            <td><a class="button is-link">Download</a></td>
+                        </tr>
+
+                        <tr>
+                            <td><font size="5">Notepad++ language definition</font><br/><font color="#646464">Syntax highlighting definition file for Notepad++</font></td>
                             <td><a class="button is-link">Download</a></td>
                         </tr>
 
