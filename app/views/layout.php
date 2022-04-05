@@ -121,6 +121,10 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', function(){
 				window.vue.initNavbar();
+
+				if (document.getElementById('button-aquashell')) {
+					document.getElementById('button-aquashell').click();
+				}
 			});
 		</script>
 	</body>
