@@ -42,7 +42,14 @@ class IndexController extends BaseController {
 	 */
 	public function documentation($request)
 	{
+		$pd = new \Parsedown();
+		$shell_doc = $pd->text(file_get_contents(app_path('/resources/md/shell.md')));
+        $scripting_doc = $pd->text(file_get_contents(app_path('/resources/md/scripting.md')));
+
 		//Generate and return a view by using the helper
-		return view('layout', array(array('content', 'documentation')));
+		return view('layout', [['content', 'documentation']], [
+			'shell_doc' => $shell_doc,
+			'scripting_doc' => $scripting_doc]
+		);
 	}
 }
