@@ -30,7 +30,7 @@
         },
 
         showDocumentation: function(elem) {
-            let elems = ['aquashell', 'scripting'];
+            let elems = ['aquashell', 'scripting', 'reference'];
             elems.forEach(function(e, i) {
                 let el = document.getElementById('documentation-' + e);
                 if (!el.classList.contains('is-hidden')) {

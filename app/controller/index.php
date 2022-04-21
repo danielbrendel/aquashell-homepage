@@ -45,11 +45,13 @@ class IndexController extends BaseController {
 		$pd = new \Parsedown();
 		$shell_doc = $pd->text(file_get_contents(app_path('/resources/md/shell.md')));
         $scripting_doc = $pd->text(file_get_contents(app_path('/resources/md/scripting.md')));
+		$reference_doc = $pd->text(file_get_contents(app_path('/resources/md/reference.md')));
 
 		//Generate and return a view by using the helper
 		return view('layout', [['content', 'documentation']], [
 			'shell_doc' => $shell_doc,
-			'scripting_doc' => $scripting_doc]
-		);
+			'scripting_doc' => $scripting_doc,
+			'reference_doc' => $reference_doc
+		]);
 	}
 }

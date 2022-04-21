@@ -7,7 +7,7 @@ DLL plugins.
 * require # Attempts to load a plugin library. Only needed when not running in interactive mode
 * exec (scriptfile) # Executes a script file
 * sys (string) # Passes the string to the Windows batch system
-* run (./) (path> (args) (dir) # Attempts to launch a specified file 
+* run (path) (args) (dir) # Attempts to launch a specified file 
 * listlibs # Lists all shell plugin libraries
 * quit # Exists the shell
 

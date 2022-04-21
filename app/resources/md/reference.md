@@ -1,0 +1,408 @@
+## Internal commands
+
+### require
+This command loads a plugin. It is only needed in non-interactive mode.
+```
+require "pluginname"; #Load plugin relative to the AquaShell plugin directory
+```
+
+### exec
+This commands executes another script file
+```
+exec "scriptfile.dnys";
+```
+
+### sys
+This command passes an expression to the Windows console subsystem.
+```
+sys "pause"; #Runs the pause command of the Windows console subsystem
+```
+
+### run
+This command launches a file. How the file is launched is determined by the Windows system settings
+```
+run "path/to/file" "args to file" "directory to be run in"
+```
+
+### listlibs
+Useful in interactive mode. Lists all loaded plugins
+```
+listlibs
+```
+
+### quit
+Useful in interactive mode. Quits the shell
+```
+quit
+```
+
+## Plugin commands
+
+### Array
+The array plugin provides some basic functionality to work with arrays. It differs between static and dynamic arrays.
+```
+static_array "name" "data type" (list, of, items); #Creates a static array with the given items. Datatype may be one of the default dnys data types
+
+store_array_item_s (array name, index var) "target var"; #Stores an array item in any registered var with the same data type
+
+free_array_s "array name"; #Removes the array and frees the memory
+
+dynamic_array "array name" "data type" "initial size as positive number" (list of initial items) #Registers a dynamic array
+
+store_array_item_d "name of array" "positive index of array item" "target var"; #Stores the array item expression to the given variable of same type
+
+store_item_to_array_d "source variable" "array name" "positive index of array item to save to"; #Stores the expression of the variable to the specified array item
+
+copy_array_item_d "source array name" "positive index" "target array name" "positive index"; #Copies one array value to another array item
+
+resize_array "array name" "new array size"; #Resizes the array with new dimension
+
+item_insert "array name" "position to insert" "expression"; #Inserts the expression as a new item at the given position
+
+item_append "array name" "expression"; #Appends the expression to the array
+
+free_array_d "array name"; #Removes the array and frees the memory
+
+asetindex "index value"; #Sets the common array index value
+
+foreach (array name, iterator variable name) { code }; #Iterates through the array and executes the given code for each iteration
+```
+
+### Auto
+The auto (automation) plugin can be used to interact with other programs, windows or controls.
+```
+HWND obj_name; #Registers an object from type HWND for window management
+
+aut_findwindow "hwnd object" "window title" "window class name"; #Tries to find the window with given title and/or class name. If you want to skip one entity, use \0. Stores the found window handle in the specified object variable.
+
+aut_iswindow "hwnd object" "result var"; #Stores whether the given window is still valid in the result var of type bool.
+
+aut_getfgwindow "hwnd object"; #Stores the foreground window handle in the object variable if any found
+
+aut_setfgwindow "hwnd object" "result var"; #Tries to set the given window to foreground and stores the result in the result var of type bool
+
+aut_setwndpos "hwnd object" "xpos" "ypos" "result var"; #Tries to set the window position to the given coords. Stores the result in the result var of type bool
+
+aut_getwndpos "hwnd object" "result var x" "result var y" "operation result"; #Tries to get the window position and stores x and y in the variables. Also the operation result is stored in a result variable of type bool
+
+aut_getwndsize "hwnd object" "result var width" "result var height" "operation result"; #Tries to get the width and height of a window and stores the data. Also the operation result is stored in the result var of type bool
+
+aut_setwndtext "hwnd object" "new text" "result var"; #Tries to set the given windows text. Operation result is stored in result var of type bool
+
+aut_getwndtext "hwnd object" "result var"; #Stores the window text of the specified window in the result var of type string
+
+aut_getclassname "hwnd object" "result var"; #Stores the window class name of the specified window in the result var of type string
+
+aut_showwnd "hwnd object" "style" "result var"; #Tries to set the show style of a window. Stores the operation result in the result var
+
+aut_getcursorpos "result var x" "result var y" "operation result"; #Get cursor position and store the values in the variables. Also stores the operation result in the op result var
+
+aut_setcursorpos "x" "y" "operation result var"; #Sets current cursor position and stores operation result in the given var
+
+aut_run "file/to/run" "params" "dir" "operation result var"; #Runs the given object. How the object is treated depends on Windows settings. You can also specify arguments, a directory of the file context and a result var that receives the status of the operation as bool
+
+aut_iskeydown "vkey" "result var"; #Indicates if the given key is held down
+
+aut_iskeyup "vkey" "result var"; #Indicates if the given key is released
+
+aut_enumwindows "callback function name"; #Enumerates all available windows and calls a function with following schema: function EnumWindowsCallback bool(hwnd int, title string) {}; Returns indication value wether or not to continue in the enumeration process
+
+aut_enumchildwindows "hwnd" "callback function name"; #Enumerates child windows of a parent window. Callback routine definition is same as above
+
+aut_sendkeystrokes "strokes" "shall simulate ctrl" "shall simulate shift" "shall simulate alt" "operation result"; #Sends keystrokes to the system. You can specify if CTRL, Shift or Alt shall also be emulated. Stores operation result. Strokes can be characters, numbers but also special keys such as the return key, specified as \VK_RETURN; For instance to send the strokes 123+45= and return, you can use the token "123+45=\VK_RETURN;"
+
+aut_sendmousestrokes "strokes" "shall simulate ctrl" "shall simulate shift" "shall simulate alt" "operation result"; #Sends mouse strokes to the system. Also here you can specify ctrl, shift and alt and also an operation result var. Mouse strokes are only special tokens such as "\VM_LEFTDOWN;\VM_LEFTUP;"
+
+aut_addkeyevent "name of function to call" "key number to hook into" "operation result"; #Add a keyboard hook. The function to be called is of following definition: function KeyboardEvent void(isdown bool, isshift bool, isctrl bool, isalt bool) {};
+
+aut_addmouseevent "name of function to call" "mouse number to hook into" "operation result"; #Add a mouse hook. The function to be called is of following definition: function MouseEvent void(isshift bool, isctrl bool, isalt bool) {}; Note it is only called for pressed event, not down or up
+
+aut_procevents; #Call this in your main loop in order to process all your hooks
+```
+
+### EnvVars
+This plugin provides all environment variables to the scripting system. It does not provide any further functions, but just makes
+the variables available. For example you will then have the variable %windir or %USERNAME available. What variables actually are available
+depends on your Windows system and settings
+
+### Events
+The events plugin allows you to register events and then trigger them on any desired occassion.
+```
+events.register "event name" "amount of arguments" "shall allow multiple handlers"; #Registers an event type. You need to specify the event name, a positive number that specifies the amount of arguments that a handler receives and also a bool flag if multiple handlers are allowed for that event
+
+events.add "event name" "name of callback function"; #Associate an event handler function with a given registered event
+
+events.raise "event name" (list, of, arguments) "result var to store result"; #Raise an event and call the handler. You can pass arguments to the handler. The amount must match the count specified when registered the event. You can specify the name of a variable that shall recieve the function result or just void if storage of a result is not intended.
+```
+
+### FileIO
+The FileIO plugin allows you to access files on a storage system (e.g. hard disk, USB drive, ...). 
+```
+fopen
+
+fisopen
+
+fateof
+
+fwritetext
+
+fwriteline
+
+freadline
+
+fclose
+
+dcreate
+
+dremove
+
+fremove
+
+denum
+
+dgetcurrent
+
+fgetsize
+
+fdisdir
+
+fexists
+
+dexists
+
+fcopy
+
+fmove
+```
+
+### Forms
+The forms plugin can be used to create GUI systems consisting of windows with attached controls. This is a nice way to create more
+userfriendly interfaces and visually configure the scripted task.
+```
+wnd_spawnform
+
+wnd_setformpos
+
+wnd_setformres
+
+wnd_setcomppos
+
+wnd_setcompres
+
+wnd_setcomptext
+
+wnd_setcompfont
+
+wnd_getcomptext
+
+wnd_spawnlabel
+
+wnd_spawnbutton
+
+wnd_spawntextbox
+
+wnd_gettextboxtext
+
+wnd_settextboxtext
+
+wnd_spawncheckbox
+
+wnd_cbischecked
+
+wnd_cbsetvalue
+
+wnd_spawnlistbox
+
+wnd_lbadditem
+
+wnd_lbinsertitem
+
+wnd_lbremoveitem
+
+wnd_lbupdateitem
+
+wnd_lbselectitem
+
+wnd_lbgetcount
+
+wnd_lbgetselection
+
+wnd_lbgettext
+
+wnd_spawncombobox
+
+wnd_cbadditem
+
+wnd_cbremoveitem
+
+wnd_cbgetcount
+
+wnd_cbselectitem
+
+wnd_cbgetselection
+
+wnd_cbgetselectionid
+
+wnd_cbgetitemtext
+
+wnd_spawnlistview
+
+wnd_lvaddcategory
+
+wnd_lvgetsubitemcount
+
+wnd_lvgetitemcount
+
+wnd_lvsetitemtext
+
+wnd_lvsetsubitemtext
+
+wnd_lvgetitemtext
+
+wnd_lvgetselection
+
+wnd_lvdeleteitem
+
+wnd_spawnprogressbar
+
+wnd_setpbrange
+
+wnd_setpbposition
+
+wnd_getpbrange
+
+wnd_getpbposition
+
+wnd_spawnimagebox
+
+wnd_setimageboximage
+
+wnd_getimageboximage
+
+wnd_isformvalid
+
+wnd_process
+
+wnd_freeform
+```
+
+### InputBox
+The InputBox plugin provides both a command and a function to graphically receive input expressions from the user.
+```
+inputbox "title of inputbox" "label/description text" "default expression" xpos ypos "name of result var"; #Prompts the user and returns the input to the script
+
+#Or call the wrapper function: 
+call inputbox("title", "label", "default", x, y) => result_var;
+```
+
+### MiscUtils
+This plugin provides various miscellaneous helper commands.
+```
+addtimer "timer ident" "integer duration in milliseconds"; #Adds a timer where the callback function is executed each N milliseconds. The callback function is of following schema: function YourIdent_OnElapsed bool() {}; Its return value indicates if the timer shall be removed or stay processed
+
+timerexists "timer ident" "result var"; #Checks if the given timer exists and stores the result
+
+calctimers; #Processes all timers. This should be run from your main loop
+
+textview "file/to/view"; #This is just a command to print the whole content of a text file to the output
+
+random "start" "max" "result var"; #Generates a random number between 'start' and 'max' (inclusive). Stores the result in the result variable
+
+sleep "time in milliseconds"; #Let's the script execution pause for the given amount of milliseconds
+
+clpb_setstring "text content"; #Writes the given string expression to clipboard
+
+clpb_getstring "result var"; #Writes the contents of the clipboard (if it is text) to the result variable
+
+clpb_clear; #Clears the clipboard content
+
+gettickcount "result var"; #Gets the system tick count and writes it to the given result variable
+```
+
+### NetClient
+The NetClient plugin can be used to perform basic network tasks. That means it can communicate with a network service on a specified port, be
+it Internet or LAN.
+```
+net_spawnclient "client ident" "target service address" "target service port" ("socket type tcp/udp", "data type ansi/unicode"); #Spawns a network client to communicate with a network service. For each spawned client the following event functions must exist:
+function ClientIdent_OnConnected void() {}; #Connected to service
+function ClientIdent_OnDisconnected void() {}; #Disconnected from service
+function ClientIdent_OnRecieve void(content string) {}; #Recieve text contents from service
+function ClientIdent_OnError void(error_message string) {}; #Called for occurred errors 
+
+net_isvalid "client ident" "result var"; #Checks if a client with that ident exists and stores the result in the var
+
+net_process; #Processes all clients and their sockets. This should be called in a main loop
+
+net_sendbuffer "client ident" "text content"; #Tries to send the text content through the client channel
+
+net_releaseclient "client ident"; #Releases the client, frees the memory and removes it
+```
+
+### Speech
+The speech plugin can be used to use Microsoft SAPI to perform text2speech.
+```
+spk_setvoice "voice ident"; #Sets the current available voice to use for speech
+
+spk_setpitch "pitch integer"; #Sets the current voice pitch
+
+spk_setvolume "volume integer"; #Sets the current volume
+
+spk_setspeed "speed integer"; #The speed of how fast the text shall be spoken
+
+spk_getvoice "result var"; #Gets current voice ident
+
+spk_getpitch "result var"; #Gets current pitch value
+
+spk_getvolume "result var"; #Gets current volume
+
+spk_getspeed "result var"; #Gets current speed
+
+spk_speak "text"; #Speaks the given text content. The script continues after the text has been spoken
+
+spk_speakasync "text"; #Speaks the given text content asynchronously. The script continues immediatelly and the text is spoken parallely
+```
+
+### Strings
+The strings plugin can be used to perform all importan operations on strings
+```
+s_getlen "string" "result var"; #Stores the length of the string in the result var
+
+s_getchar "string" "index" "result var"; #Stores the character at the given position of the string in the result var
+
+s_append "string var" "expression"; #Appends the expression to the given string variable and stores it into said variable
+
+s_find "string" "substring" "result var"; #Attempts to find the position of the substring in the string and stores it into the result var
+
+s_substr "string" "start" "end" "result var"; #Gets the substring from 'start' to 'end' (inclusive) of the string and writes it to the result var
+
+s_replace "result var" "old string" "new string"; #Tries to find all occurences of 'old string' in the variable and replaces it with 'new string'. Result is stored in the same variable
+
+s_tokenize "string to tokenize" "split char" "var ident"; #Tokenizes the given string into separate variables For example the tokenization of "This is just fine" using " " and ident myIdent would create the following objects:
+myIdent.count=4
+myIdent[0]="This"
+myIdent[1]="is"
+myIdent[2]="just"
+myIdent[3]="fine"
+
+s_settokenindex "index number"; #Set current token index value
+
+s_cleartokens "ident"; #Clears all associated token variables of that given token
+
+s_upper "string variable"; #Converts all lower characters to upper characters of that variable
+
+s_lower "string variable"; #Converts all upper characters to lower characters of that variable
+
+s_rtrim "string variable"; #Performs a right-trim operation on that variable
+
+s_ltrim "string variable"; #Performs a left-trim operation on that variable
+
+s_fmtescseq "string token" "result var"; #Writes the actual Unicode character in hexadecimal representation of the token to the result var. Example: "\53BD;" would convert the hexadecimal representation as character and store it
+```
+
+### TextInput
+This plugin can be used to read text input from the command line.
+```
+input "target var" "A descriptive text"; #Prompts the user to input text that is stored into the var
+
+setinput "var name" "A descriptive text"; #Same as 'input' with the exception that the variable will be registered if it not already exists
+```
