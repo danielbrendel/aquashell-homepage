@@ -10,16 +10,16 @@
             </p>
 
             <p>
-                <a class="button is-success" href="{{ asset('downloads/AquaShell_v1.0_x64.zip') }}">Download version 1.0</a>
+                <a class="button is-success" href="{{ asset('downloads/AquaShell_v1.0_x64_Installer.zip') }}">Download version 1.0</a>
             </p>
 
             <p>
                 <h3>Installation instructions</h3>
 
                 <ul>
-                    <li>Download the ZIP archive and extract it to a persistent location</li>
-                    <li>Run the file_association.bat in order to register *.dnys files with AquaShell</li>
-                    <li>You can also launch dnyAquaShell.exe in order to use the interactive mode</li>
+                    <li>Download the ZIP archive and extract it to a location of your choice</li>
+                    <li>Run the extracted installer in order to install AquaShell on your system</li>
+                    <li>Run the file_association_add.bat if you want to register .dnys files with AquaShell</li>
                     <li>Visit the <a href="{{ url('/documentation') }}">documentation</a> to see how to create scripts</li>
                 </ul>
             </p>
@@ -34,6 +34,11 @@
                     </thead>
 
                     <tbody>
+                        <tr>
+                            <td><font size="5">AquaShell 1.0 Portable</font><br/><font color="#646464">Portable version of AquaShell</font></td>
+                            <td><a class="button is-link" href="{{ asset('downloads/AquaShell_v1.0_x64_Portable.zip') }}">Download</a></td>
+                        </tr>
+
                         <tr>
                             <td><font size="5">AquaShell Plugin SDK</font><br/><font color="#646464">Use the C++ SDK to create your own native plugins</font></td>
                             <td><a class="button is-link" href="{{ asset('downloads/AquaShell_PluginSDK_v1.0.zip') }}">Download</a></td>
