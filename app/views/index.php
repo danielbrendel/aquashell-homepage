@@ -14,6 +14,10 @@
 				Both simple and complex scripts are possible.
 			</p>
 
+			<p id="mobile-code-image" class="is-hidden">
+				<img src="{{ asset('img/code.png') }}" alt="Code"/>
+			</p>
+
 			<p>
 				AquaShell provides the following features:
 			</p>

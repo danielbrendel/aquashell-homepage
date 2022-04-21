@@ -125,7 +125,24 @@
 				if (document.getElementById('button-aquashell')) {
 					document.getElementById('button-aquashell').click();
 				}
+
+				window.onresize();
 			});
+
+			window.onresize = function() {
+				let he = document.getElementById('mobile-code-image');
+				if (he) {
+					if (document.body.clientWidth <= 1103) {
+						if (he.classList.contains('is-hidden')) {
+							he.classList.remove('is-hidden');
+						}
+					} else {
+						if (!he.classList.contains('is-hidden')) {
+							he.classList.add('is-hidden');
+						}
+					}
+				}
+			}
 		</script>
 	</body>
 </html>
