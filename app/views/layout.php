@@ -127,6 +127,13 @@
 				}
 
 				window.onresize();
+
+				@if ((isset($tab)) && (is_string($tab)))
+					let btnel = document.getElementById('button-{{ $tab }}');
+					if (btnel) {
+						btnel.click();
+					}
+				@endif
 			});
 
 			window.onresize = function() {

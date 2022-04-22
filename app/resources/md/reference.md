@@ -138,152 +138,152 @@ events.raise "event name" (list, of, arguments) "result var to store result"; #R
 ### FileIO
 The FileIO plugin allows you to access files on a storage system (e.g. hard disk, USB drive, ...). 
 ```
-fopen
+fopen("file name", "var name to store handle", shall_append) { code to execute }; #Opens a file and optionally executes the code that handles the file operation
 
-fisopen
+fisopen "file handle" "result var"; #Indicates if a file has been opened
 
-fateof
+fateof "file handle" "result var"; #Indicates if file pointer is at end of file
 
-fwritetext
+fwritetext "file handle" "text to write"; #Writes text to file at current position
 
-fwriteline
+fwriteline "file handle" "line to write"; #Writes a line to the file at current position
 
-freadline
+freadline "file handle" "result var"; #Reads the current line of the file and stores it in the result var
 
-fclose
+fclose "file handle"; #Closes the file
 
-dcreate
+dcreate "folder name" "result var"; #Attempts to create a folder stores the result var
 
-dremove
+dremove "folder name" "result var"; #Attempts to delete the specified folder and stores the result var
 
-fremove
+fremove "file name" "result var"; #Attempts to delete the given file and stores the result var
 
-denum
+denum "base folder" "filter" "callback function name" "result"; #Enumerates all subfolders in a given folder. The callback function must be of following definition: function CallbackEnumFolders int(baseFolder string, subfolder string) {};
 
-dgetcurrent
+dgetcurrent "result var"; #Stores the current working directory in the result var
 
-fgetsize
+fgetsize "file name" "result var"; #Stores the file size in bytes in the result var if it has been found
 
-fdisdir
+fdisdir "object name" "result var"; #Indicates if the given object name is a folder.
 
-fexists
+fexists "file name" "result var"; #Indicates if the given file exists
 
-dexists
+dexists "folder name" "result var"; #Indicates if the given folder exists
 
-fcopy
+fcopy "source" "destination" "result var"; #Tries to copy the file from source to destination and stores the result
 
-fmove
+fmove "source" "destination" "result var"; #Tries to move the file from source to destination and stores the result
 ```
 
 ### Forms
 The forms plugin can be used to create GUI systems consisting of windows with attached controls. This is a nice way to create more
 userfriendly interfaces and visually configure the scripted task.
 ```
-wnd_spawnform
+wnd_spawnform "form name" "form title text" x y width height "result var"; #Creates a new form and stores the handle in the result var of type int
 
-wnd_setformpos
+wnd_setformpos "form handle" x y; #Sets the new form position
 
-wnd_setformres
+wnd_setformres "form handle" w h; #Sets the new form resolution
 
-wnd_setcomppos
+wnd_setcomppos "form handle" "component type" "component name" x y; #Sets the new position of a form component
 
-wnd_setcompres
+wnd_setcompres "form handle" "component type" "component name" w h; #Sets the new resolution of a form component
 
-wnd_setcomptext
+wnd_setcomptext "form handle" "component type" "component name" "new text"; #Sets the new text of a form component
 
-wnd_setcompfont
+wnd_setcompfont "form handle" "component type" "component name" "font name" w h bold italic underline strikeout; #Sets new component font data
 
-wnd_getcomptext
+wnd_getcomptext "form handle" "component type" "component name" "result var"; #Gets a component text
 
-wnd_spawnlabel
+wnd_spawnlabel "form handle" "label name" x y w h "initial text"; #Adds a new label to the given form.
 
-wnd_spawnbutton
+wnd_spawnbutton "form handle" "button name" x y w h "button text"; #Adds a new button to a form. It is assumed that a callback function with following definition exists: function ButtonName_OnClick void() {};
 
-wnd_spawntextbox
+wnd_spawntextbox "form handle" "textbox name" x y w h "initial text"; #Adds a new textbox to the form. It is assumed that a callback function with following definition exists: function TextboxName_OnChange void(newText string) {};
 
-wnd_gettextboxtext
+wnd_gettextboxtext "form handle" "textbox name" "result var"; #Stores the textbox text in the result var if found
 
-wnd_settextboxtext
+wnd_settextboxtext "form handle" "textbox name" "new text"; #Sets the text content of the given textbox if exists
 
-wnd_spawncheckbox
+wnd_spawncheckbox "form handle" "checkbox name" x y w h "initial text" "is checked"; #Adds a checkbox to the form
 
-wnd_cbischecked
+wnd_cbischecked "form handle" "checkbox name" "result var"; #Indicates if the checkbox is currently checked
 
-wnd_cbsetvalue
+wnd_cbsetvalue "form handle" "checkbox name" "check value"; #Sets the checked status of the given checkbox
 
-wnd_spawnlistbox
+wnd_spawnlistbox "form handle" "listbox name" x y w h; #Adds a new listbox to the form. The following callback functions are assumed: function ListboxName_OnSelectionChange void(newItem int) {}; and function ListboxName_OnDoubleClick void(item int) {};
 
-wnd_lbadditem
+wnd_lbadditem "form handle" "listbox name" "new text item"; #Adds a new text item to the listbox
 
-wnd_lbinsertitem
+wnd_lbinsertitem "form handle" "listbox name" "index of position where to insert" "new text item"; #Inserts an item at the given position
 
-wnd_lbremoveitem
+wnd_lbremoveitem "form handle" "listbox name" "index of item which to remove"; #Removes the item from the listbox
 
-wnd_lbupdateitem
+wnd_lbupdateitem "form handle" "listbox name" "index of item to update" "new text content"; #Updates the given item with new content
 
-wnd_lbselectitem
+wnd_lbselectitem "form handle" "listbox name" "index of item to select"; #Selects the given item of the listbox
 
-wnd_lbgetcount
+wnd_lbgetcount "form handle" "listbox name" "result var"; #Stores the amount of items in the result var
 
-wnd_lbgetselection
+wnd_lbgetselection "form handle" "listbox name" "result var"; #Stores the index value of the selected item in the result var
 
-wnd_lbgettext
+wnd_lbgettext "form handle" "listbox name" "index of item" "result var"; #Stores the text content of a given item in the result var
 
-wnd_spawncombobox
+wnd_spawncombobox "form handle" "combobox name" x y w h; #Adds a combobox to the form. It is assumed that the following callback function exists: function ComboboxName_OnSelect void(newItem string) {};
 
-wnd_cbadditem
+wnd_cbadditem "form handle" "combobox name" "new text item"; #Adds a new text item to the combobox
 
-wnd_cbremoveitem
+wnd_cbremoveitem "form handle" "combobox name" "index of item"; #Removes the given item by index
 
-wnd_cbgetcount
+wnd_cbgetcount "form handle" "combobox name" "result var"; #Stores the amount of items in the result var of type int
 
-wnd_cbselectitem
+wnd_cbselectitem "form handle" "combobox name" "index of item"; #Selects the given item by index
 
-wnd_cbgetselection
+wnd_cbgetselection "form handle" "combobox name" "result var"; #Stores the content of the selected item in the result var
 
-wnd_cbgetselectionid
+wnd_cbgetselectionid "form handle" "combobox name" "result var"; #Stores the index value of the selected item into the result var of type int
 
-wnd_cbgetitemtext
+wnd_cbgetitemtext "form handle" "combobox name" "index value" "result var"; #Stores the text content of an item by index value in the result var of type string
 
-wnd_spawnlistview
+wnd_spawnlistview "form handle" "listview name" x y w h; #Adds a listview control to the form. The following callback functions are assumed: function ListviewName_OnSelect void(item int) {}; and function ListviewName_OnDoubleClick void(item int) {};
 
-wnd_lvaddcategory
+wnd_lvaddcategory "form handle" "listview name" "category name" "width" "is left aligned"; #Adds a new category to the listview
 
-wnd_lvgetsubitemcount
+wnd_lvgetsubitemcount "form handle" "listview name" "result var"; #Stores the sub item count in the result var
 
-wnd_lvgetitemcount
+wnd_lvgetitemcount "form handle" "listview name" "result var"; #Stores the item count in the result var
 
-wnd_lvsetitemtext
+wnd_lvsetitemtext "form handle" "listview name" "item text" "item num" "result var"; #Adds a listview item
 
-wnd_lvsetsubitemtext
+wnd_lvsetsubitemtext "form handle" "listview name" "item num" "subitem text" "subitem num" "result var"; #Adds a subitem to the listview
 
-wnd_lvgetitemtext
+wnd_lvgetitemtext "form handle" "listview name" "item num" "subitem num" "buffer count" "result var"; #Gets an item/subitem text content and stores it
 
-wnd_lvgetselection
+wnd_lvgetselection "form handle" "listview name" "result var"; #Gets the current selection
 
-wnd_lvdeleteitem
+wnd_lvdeleteitem "form handle" "listview name" "index of item"; #Deletes the given item
 
-wnd_spawnprogressbar
+wnd_spawnprogressbar "form handle" "bar name" x y w h max start; #Adds a new progress bar to the form
 
-wnd_setpbrange
+wnd_setpbrange "form handle" "bar name" "max value"; #Sets the new max value of the progress bar
 
-wnd_setpbposition
+wnd_setpbposition "form handle" "bar name" "position"; #Sets the new position value of the progress bar
 
-wnd_getpbrange
+wnd_getpbrange "form handle" "bar name" "result var"; #Stores the max value in the result var
 
-wnd_getpbposition
+wnd_getpbposition "form handle" "bar name" "result var"; #Stores the current position value in the result var
 
-wnd_spawnimagebox
+wnd_spawnimagebox "form handle" "imagebox name" x y w h "image file"; #Adds a new imagebox to the form
 
-wnd_setimageboximage
+wnd_setimageboximage "form handle" "imagebox name" "image file"; #Sets the current image of the imagebox
 
-wnd_getimageboximage
+wnd_getimageboximage "form handle" "imagebox name" "result var"; #Stores the current image file name to the var
 
-wnd_isformvalid
+wnd_isformvalid "form handle" "result var"; #Indicates if the specified form is valid
 
-wnd_process
+wnd_process; #Processes all window events. Should be called in a main loop
 
-wnd_freeform
+wnd_freeform "form handle"; #Frees the form and all attached controls
 ```
 
 ### InputBox
