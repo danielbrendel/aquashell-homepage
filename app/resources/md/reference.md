@@ -11,6 +11,10 @@ This commands executes another script file
 ```
 exec "scriptfile.dnys";
 ```
+You can also provide arguments:
+```
+exec "scriptfile.dnys" "my arg" 123 true; # In script file "my arg" will be %1, 123 will be %2 and true will be %3
+```
 
 ### sys
 This command passes an expression to the Windows console subsystem.
