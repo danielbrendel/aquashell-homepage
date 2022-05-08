@@ -56,6 +56,7 @@
 				</div>
 			</nav>
 
+			@if ((isset($show_header)) && ($show_header))
 			<div class="header" style="background-image: url('{{ asset('img/header.jpg') }}');">
 				<div class="header-inner">
 					<div class="columns">
@@ -95,6 +96,7 @@
 					</div>
 				</div>
 			</div>
+			@endif
 
 			<div class="content">
 				{%content%}
