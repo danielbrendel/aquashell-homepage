@@ -7,7 +7,7 @@
         </div>
 
         <div class="text">
-            <p>The requested resource <?= $_SERVER['REQUEST_URI']; ?> was not found on the server.</p>
+            <p>The requested resource {{ $_SERVER['REQUEST_URI'] }} was not found on the server.</p>
         </div>
 
         <div class="links">
