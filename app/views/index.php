@@ -1,96 +1,74 @@
-<div class="columns">
-	<div class="column is-2"></div>
 
-	<div class="column is-8 is-vertical-margin">
-		<div class="content-padding">
-			<h2 class="is-font-headline">Welcome to AquaShell</h2>
+<div class="content">
+	<a name="info"></a>
+	<h2 class="is-font-headline">Welcome to AquaShell</h2>
 
-			<p>
-				AquaShell is an easy-to-use Windows scripting and automation system.
-			</p>
+	<p>
+		AquaShell is an easy-to-use Windows scripting and automation system. It integrates well with Windows and allows your to both create automation
+		tasks as well as complex scripting applications. The product features a plugin system, so the shell can be extended with more commands. 
+		Of course there are standard plugins provided already. The syntax is inspired by C++, PHP, Tcl and PowerShell. It is easy to learn in order to
+		quickly start developing your scripts.
+	</p>
 
-			<p>
-				It is well suited for automating tedious tasks on a Windows machine.
-				Both simple and complex scripts are possible.
-			</p>
+	<p>
+		AquaShell is opensourced software released under the MIT license. This ensures full transparency and allows you to contribute.
+		We welcome you to provide feedback and report bugs as well as create your own plugins to enhance the shell functionality. 
+		If you need help with creating scripts, feel free to create an issue on GitHub.
+	</p>
 
-			<p id="mobile-code-image" class="is-hidden">
-				<img src="{{ asset('img/code.png') }}" alt="Code"/>
-			</p>
+	<div class="image-showcase">
+		<div class="image-showcase-item">
+			<h3>Create Complex scripts</h3>
+			<img src="{{ asset('img/code1.png') }}" alt="Code"/>
+		</div>
 
-			<p>
-				AquaShell provides the following features:
-			</p>
+		<div class="image-showcase-item">
+			<h3>Make Automations</h3>
+			<img src="{{ asset('img/code2.png') }}" alt="Code"/>
+		</div>
 
-			<div class="feature-cards">
-				<div class="feature-card">
-					<div class="feature-card-left">
-						&#x25A0;
-					</div>
-					
-					<div class="feature-card-right">
-						Uses dnyScriptInterpreter, an interpreter for the dnyScript scripting language.
-					</div>
-				</div>
-
-				<div class="feature-card">
-					<div class="feature-card-left">
-						&#x25A0;
-					</div>
-
-					<div class="feature-card-right">
-						Easy to understand syntax which is influenced by C++, PHP and Batch.
-					</div>
-				</div>
-
-				<div class="feature-card">
-					<div class="feature-card-left">
-						&#x25A0;
-					</div>
-
-					<div class="feature-card-right">
-						Extendable via native plugins using the provided C++ SDK.
-					</div>
-				</div>
-
-				<div class="feature-card">
-					<div class="feature-card-left">
-						&#x25A0;
-					</div>
-
-					<div class="feature-card-right">
-						Can be used via the Console interface or by running script files directly.
-					</div> 
-				</div>
-
-				<div class="feature-card">
-					<div class="feature-card-left">
-						&#x25A0;
-					</div>
-
-					<div class="feature-card-right">
-						Great support by contacting the developer.
-					</div>
-				</div>
-
-				<div class="feature-card">
-					<div class="feature-card-left">
-						&#x25A0;
-					</div>
-
-					<div class="feature-card-right">
-						Open sourced software hosted on GitHub.
-					</div>
-				</div>
-			</div>
-
-			<p>
-				<img src="{{ asset('img/code2.png') }}" alt="Code"/>
-			</p>
-
-			<p>If you have any questions, please create an issue on GitHub.</p>
+		<div class="image-showcase-item">
+			<h3>Develop Applications</h3>
+			<img src="{{ asset('img/code3.png') }}" alt="Code"/>
 		</div>
 	</div>
 
-	<div class="column is-2"></div>
+	<hr/>
+
+	<h2>Make shell scripting fun on Windows again</h2>
+
+	<p class="is-font-medium">AquaShell provides features that enrich your shell scripting experience</p>
+
+	<div class="feature-cards">
+		<div class="feature-cards-block">
+			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Interactive Commandline</div>
+			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Integration with Windows</div>
+			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Fast Windows automation</div>
+			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Complex scripted applications</div>
+		</div>
+
+		<div class="feature-cards-block feature-cards-block-fix">
+			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Plugin interface</div>
+			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Many pre-configured plugins</div>
+			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Internal/external Cmds</div>
+			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;VS Code & Npp integration</div>
+		</div>
+	</div>
+
+	@if (env('APP_ENABLESPONSORING'))
+		<hr/>
+
+		<p class="is-font-medium">
+			Your support is greatly appreciated
+		</p>
+
+		<p>
+			Your support helps to continue working on the project and providing the required infrastructure.
+		</p>
+
+		<p class="sponsoring">
+			<a href='https://ko-fi.com/C0C7V2ESD' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+		</p>
+	@endif
 </div>
+	

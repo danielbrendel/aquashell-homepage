@@ -7,8 +7,8 @@
 html, body {
     width: 100%;
     height: 100%;
-    padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    background-color: rgb(172, 215, 245);
 }
 
 body {
@@ -17,7 +17,6 @@ body {
 }
 
 #main {
-    background-color: rgba(120, 178, 216, 0.5);
     overflow-x: hidden;
 }
 
@@ -40,101 +39,161 @@ a:hover {
 
 .header {
     position: relative;
-    display: inline-block;
     width: 100%;
-    height: 500px;
-    background-size: cover;
+    height: 453px;
+    top: -52px;
+    margin-top: 52px;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.header-inner {
+.header-overlay {
     position: relative;
-    top: 12px;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 .header-content {
-    width: 100%;
-    display: inline-block;
-    @media screen and (min-width: 768px) {
-        margin-top: 74px;
-    }
-    color: rgb(220, 220, 220);
+    position: relative;
+    top: 50%;
+    transform: translate(-0%, -50%);
+    text-align: center;
+    padding: 20px;
 }
 
-.header-left {
-    position: relative;
+.header-content h1 {
+    color: rgb(230, 230, 230);
+    font-size: 2.5em;
+}
+
+.header-content h2 {
+    color: rgb(220, 220, 220);
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.header-buttons div {
     display: inline-block;
     width: 45%;
-    text-align: right;
-    margin-right: 20px;
-    @media screen and (max-width: 1103px) {
-        display: none;
+    @media screen and (min-width: 1089px) {
+        width: 12%;
     }
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
-.header-right {
+.header-content a {
+    width: 100%;
+}
+
+.header-badges {
+    margin-bottom: 25px;
+}
+
+.header-badges img {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.content {
+    position: relative;
+    top: -20px;
+    text-align: center;
+    padding: 20px;
+    color: rgb(50, 50, 50);
+}
+
+.content h2 {
+    font-size: 2.5em;
+    color: rgb(50, 50, 50);
+    margin-bottom: 20px;
+}
+
+.content h3 {
+    font-size: 2.0em;
+    color: rgb(50, 50, 50);
+    margin-bottom: 20px;
+}
+
+.content p {
+    margin-bottom: 20px;
+}
+
+.content hr {
+    background-color: rgb(240, 240, 240);
+    height: 1px;
+    margin-top: 60px;
+    margin-bottom: 35px;
+}
+
+.content pre {
+    background-color: rgb(90, 165, 235);
+    border-left: 2px solid rgb(67, 85, 179);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.image-showcase {
+    position: relative;
+    width: 100%;
+    margin-top: 55px;
+    margin-bottom: 10px;
+}
+
+.image-showcase-item {
     position: relative;
     display: inline-block;
-    width: 40%;
-    @media screen and (max-width: 1386px) {
-        width: 50%;
-    }
+    width: 30%;
     @media screen and (max-width: 768px) {
-        width: 89%;
-        margin-left: 20px;
-        margin-right: 20px;
+        width: 93%;
     }
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
-.header-right p {
-    margin-bottom: 15px;
+.image-showcase-item h3 {
+    font-size: 1.2em;
 }
 
-.content-padding {
-    @media screen and (min-width: 604px) {
-        padding-left: 135px;
-        padding-right: 74px;
-    }
-    @media screen and (max-width: 603px) {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
+.image-showcase-item img {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
 
 .feature-cards {
     position: relative;
-    display: inline-block;
-    margin-top: 20px;
-    margin-bottom: 20px;
     width: 100%;
+    margin-bottom: 50px;
 }
 
-.feature-card {
+.feature-cards-block {
     position: relative;
     display: inline-block;
     margin-right: 20px;
     margin-left: 20px;
-    margin-bottom: 20px;
-    width: 45%;
-    @media screen and (max-width: 1591px) {
-        width: 100%;
+}
+
+.feature-cards-block-fix {
+    margin-left: 12px;
+}
+
+.feature-card {
+    position: relative;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+    @media screen and (max-width: 768px) {
+        font-size: 1.0em;
     }
+    color: rgb(35, 55, 132);
 }
 
-.feature-card-left {
-    position: relative;
-    display: inline-block;
-    width: 20px;
-    vertical-align: top;
-}
-
-.feature-card-right {
-    position: relative;
-    display: inline-block;
-    width: 90%;
+.feature-card i {
+    color: rgb(55, 190, 203);
 }
 
 .other-downloads {
@@ -149,9 +208,13 @@ a:hover {
     font-size: 1.5em;
 }
 
+.sponsoring {
+    margin-top: 25px;
+}
+
 .footer {
     width: 100%;
-    color: rgb(150, 150, 150);
+    color: rgb(230, 230, 230);
     background-color: rgb(34, 96, 146);
     padding: 1rem 1.5rem 1rem;
 }
@@ -181,4 +244,24 @@ a:hover {
 
 .is-pointer {
     cursor: pointer;
+}
+
+.is-font-medium {
+    font-size: 1.3em;
+    color: rgb(50, 50, 50);
+}
+
+.is-font-medium strong {
+    color: rgb(100, 100, 100);
+}
+
+.margin-fix {
+    margin-top: 50px;
+    @media screen and (min-width: 1089px) {
+        margin-top: 120px;
+    }
+}
+
+.is-left-aligned {
+    text-align: left;
 }

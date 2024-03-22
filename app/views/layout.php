@@ -58,48 +58,43 @@
 
 			@if ((isset($show_header)) && ($show_header))
 			<div class="header" style="background-image: url('{{ asset('img/header.jpg') }}');">
-				<div class="header-inner">
-					<div class="columns">
-						<div class="column is-2"></div>
+				<div class="header-overlay">
+					<div class="header-content">
+						<h1>AquaShell Scripting & Automation Shell</h1>
 
-						<div class="column is-8">
-							<div class="header-content">
-								<div class="header-left">
-									<img src="{{ asset('img/code.png') }}" alt="Code"/>
+							<h2>Automate tasks on Windows or develop complex scripted applications</h2>
+
+							<div class="header-badges">
+								<img src="https://img.shields.io/badge/os-windows-orange" alt="os-windows"/>
+								<img src="https://img.shields.io/badge/license-MIT-blue" alt="license-mit"/>
+								<img src="https://img.shields.io/badge/maintained-yes-green" alt="maintained-yes"/>
+							</div>
+
+							<div class="header-buttons">
+								<div>
+									<a class="button is-link" href="javascript:void(0);" onclick="window.vue.scrollTo('a[name=info]');">Read more</a>
 								</div>
 
-								<div class="header-right">
-									<h1 class="is-font-headline">AquaShell Scripting</h1>
-
-									<hr/>
-
-									<p>
-										AquaShell is a scripting and automation system for Windows operating systems.
-										It is used to automate Windows tasks via scripts similar to Batch/PowerShell/AutoIt.
-									</p>
-
-									<p>
-										AquaShell uses dnyScriptInterpreter, an interpreter for the dnyScript scripting
-										language. It provides an easy-to-understand syntax yet capable of creating
-										complex scripts to automate any task.
-									</p>
-
-									<p>
-										AquaShell is extendable via plugins, so you can add more scripting functionality
-										to the system. By default there are some standard plugins shipped with the product.
-									</p>
+								<div>
+									<a class="button is-success" href="{{ url('/download') }}">Download</a>
 								</div>
 							</div>
 						</div>
-
-						<div class="column is-2"></div>
 					</div>
 				</div>
 			</div>
 			@endif
 
-			<div class="content">
-				{%content%}
+			<div class="container">
+				<div class="columns">
+					<div class="column is-2"></div>
+
+					<div class="column is-8">
+						{%content%}
+					</div>
+
+					<div class="column is-2"></div>
+				</div>
 			</div>
 
 			<div class="footer">
@@ -109,7 +104,7 @@
 					<div class="column is-4">
 						<div class="footer-frame">
 							<div class="footer-content">
-								&copy; {{ date('Y') }} by Daniel Brendel | <span class="is-pointer" title="GitHub" onclick="window.open('https://github.com/danielbrendel/dnyAquaShell');"><i class="fab fa-github"></i></span>&nbsp;&nbsp;&nbsp;<span class="is-pointer" title="Twitter" onclick="window.open('https://twitter.com/dbrendel_dev');"><i class="fab fa-twitter"></i></span>
+								&copy; {{ date('Y') }} by Daniel Brendel
 							</div>
 						</div>
 					</div>
