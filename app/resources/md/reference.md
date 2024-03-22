@@ -25,22 +25,34 @@ sys "pause"; #Runs the pause command of the Windows console subsystem
 ### run
 This command launches a file. How the file is launched is determined by the Windows system settings
 ```
-run "path/to/file" "args to file" "directory to be run in"
+run "path/to/file" "args to file" "directory to be run in";
+```
+
+### cwd
+This commands changes the current working directory. Useful when you are in interactive mode and want to change the directory.
+```
+cwd "path/to/directory";
+```
+
+### pause
+Pauses the current script execution and waits for any key to be pressed
+```
+pause;
 ```
 
 ### listlibs
 Useful in interactive mode. Lists all loaded plugins
 ```
-listlibs
+listlibs;
 ```
 
 ### quit
 Useful in interactive mode. Quits the shell
 ```
-quit
+quit;
 ```
 
-## Plugin commands
+### Plugin commands
 
 ### Array
 The array plugin provides some basic functionality to work with arrays. It differs between static and dynamic arrays.
@@ -142,7 +154,7 @@ events.raise "event name" (list, of, arguments) "result var to store result"; #R
 ### FileIO
 The FileIO plugin allows you to access files on a storage system (e.g. hard disk, USB drive, ...). 
 ```
-fopen("file name", "var name to store handle", shall_append) { code to execute }; #Opens a file and optionally executes the code that handles the file operation
+fopen("var name to store handle", "file name", shall_append) { code to execute }; #Opens a file and optionally executes the code that handles the file operation
 
 fisopen "file handle" "result var"; #Indicates if a file has been opened
 
@@ -401,6 +413,24 @@ s_rtrim "string variable"; #Performs a right-trim operation on that variable
 s_ltrim "string variable"; #Performs a left-trim operation on that variable
 
 s_fmtescseq "string token" "result var"; #Writes the actual Unicode character in hexadecimal representation of the token to the result var. Example: "\53BD;" would convert the hexadecimal representation as character and store it
+```
+
+### DateTime
+This plugin provides some date and time handling commands
+```
+timestamp "result int var"; # Stores the current system timestamp into the result var
+
+fmtdatetime "format string" "opt:timestamp" "result string var"; Creates a formatted datetime string and stores it into the result var. Optionally you can provide a timestamp to perform the operation on.
+```
+
+### IRC
+This plugin provides commands in order to connect and communicate with an IRC server
+```
+irc_spawn "identifier" "host" "port" "result var"; # Attempts to connect to an IRC server
+irc_isvalid "identifier" "boolean result var"; # Indicates whether the identifier is linked to a valid (and connected) IRC object instance
+irc_process "opt:identifier"; # Processes the IRC object. If no identifier is specified then it processes all existing IRC objects. 
+irc_send "identifier" "message"; # Attempts to send a message to the server associated with the given object instance
+irc_release "identifier"; # Releases the IRC object instance which results in closing the connection.
 ```
 
 ### TextInput
