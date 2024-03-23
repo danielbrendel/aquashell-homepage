@@ -112,6 +112,12 @@
 					<div class="column is-4"></div>
 				</div>
 			</div>
+
+			<div class="scroll-to-top">
+				<div class="scroll-to-top-inner">
+					<a href="javascript:void(0);" onclick="document.querySelector('#main').scrollIntoView({behavior: 'smooth'});"><i class="fas fa-arrow-up fa-2x up-color"></i></a>
+				</div>
+			</div>
 		</div>
 
 		<script src="{{ asset('js/app.js') }}"></script>

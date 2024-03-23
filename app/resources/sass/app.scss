@@ -129,6 +129,7 @@ a:hover {
 }
 
 .content pre {
+    color: rgb(250, 250, 250);
     background-color: rgb(90, 165, 235);
     border-left: 2px solid rgb(67, 85, 179);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -151,7 +152,7 @@ a:hover {
     }
     margin-left: 10px;
     margin-right: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-align: left;
 }
 
@@ -162,6 +163,10 @@ a:hover {
 .image-showcase-item img {
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.image-showcase-item img:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
 }
 
 .feature-cards {
@@ -226,6 +231,28 @@ a:hover {
 
 .footer-content {
     text-align: center;
+}
+
+.scroll-to-top {
+    position: fixed;
+    z-index: 3;
+    bottom: 20px;
+    right: 12px;
+}
+
+.scroll-to-top-inner {
+    background-color: rgb(5, 100, 135);
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.scroll-to-top-inner a {
+    color: rgb(200, 200, 200);
+}
+
+.scroll-to-top-inner a:hover {
+    color: rgb(230, 230, 230);
 }
 
 .is-vertical-margin {
