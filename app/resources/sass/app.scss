@@ -237,10 +237,16 @@ pre code.hljs {
 }
 
 .other-downloads {
-    @media screen and (max-width: 768px) {
-        position: relative;
-        left: -12px;
-    }
+    margin-top: 50px;
+}
+
+.other-downloads div.info-list {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.other-downloads div.info-list-header-title {
+    font-size: 1.2em !important;
 }
 
 .doc-buttons {
@@ -280,6 +286,11 @@ pre code.hljs {
 .extension-list {
     position: relative;
     margin-top: 30px;
+}
+
+.extension-list div.info-list {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .sponsoring {

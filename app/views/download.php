@@ -20,41 +20,54 @@
         </ul>
     </p>
 
-    <p>
+    <div class="other-downloads">
         <h3>Other downloads</h3>
 
-        <table class="other-downloads">
-            <thead>
-                <tr></tr>
-                <tr></tr>
-            </thead>
+        <div class="info-list">
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">AquaShell Plugin SDK</div>
+                    <div class="info-list-header-button"><a class="button is-link" href="{{ asset('downloads/plugin_sdk.zip') }}">Download</a></div>
+                </div>
 
-            <tbody>
-                <tr>
-                    <td><font size="5">AquaShell Plugin SDK</font><br/><font color="#595959">Use the C++ SDK to create your own native plugins</font></td>
-                    <td><a class="button is-link" href="{{ asset('downloads/plugin_sdk.zip') }}">Download</a></td>
-                </tr>
+                <div class="info-list-content">Use the C++ SDK to create your own native plugins.</div>
+            </div>
 
-                <tr>
-                    <td><font size="5">AquaShell sourcecode</font><br/><font color="#595959">If you want to have a quick look. GitHub is prefered for contributing</font></td>
-                    <td><a class="button is-link" href="https://github.com/danielbrendel/dnyAquaShell">Download</a></td>
-                </tr>
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">AquaShell sourcecode</div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/dnyAquaShell">Download</a></div>
+                </div>
 
-                <tr>
-                    <td><font size="5">VS Code Extension</font><br/><font color="#595959">Syntax highlighting for Visual Studio Code</font></td>
-                    <td><a class="button is-link" href="https://marketplace.visualstudio.com/items?itemName=danielbrendel.dnyscript-syntax">Download</a></td>
-                </tr>
+                <div class="info-list-content">Get the sourcecode from GitHub. If you want you can also contribute to the project.</div>
+            </div>
 
-                <tr>
-                    <td><font size="5">Notepad++ language definition</font><br/><font color="#595959">Syntax highlighting definition file for Notepad++</font></td>
-                    <td><a class="button is-link" href="https://github.com/aquashell-scripting/aquashell-scripting.github.io/blob/main/res/dnyScript_npp_highlighting.xml">Download</a></td>
-                </tr>
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">VS Code Extension</div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://marketplace.visualstudio.com/items?itemName=danielbrendel.dnyscript-syntax">Download</a></div>
+                </div>
 
-                <tr>
-                    <td><font size="5">dnyScriptInterpreter</font><br/><font color="#595959">Use the core scripting system in your own product</font></td>
-                    <td><a class="button is-link" href="https://github.com/danielbrendel/dnyScriptInterpreter">Download</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </p>
+                <div class="info-list-content">Syntax highlighting for Visual Studio Code.</div>
+            </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">Notepad++ language definition</div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/aquashell-scripting/aquashell-scripting.github.io/blob/main/res/dnyScript_npp_highlighting.xml">Download</a></div>
+                </div>
+
+                <div class="info-list-content">Syntax highlighting definition file for Notepad++.</div>
+            </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">dnyScriptInterpreter</div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/dnyScriptInterpreter">Download</a></div>
+                </div>
+
+                <div class="info-list-content">Use the core scripting system in your own product.</div>
+            </div>
+        </div>
+    </div>
 </div>
