@@ -45,9 +45,19 @@
 							Download
 						</a>
 
+						<a class="navbar-item" href="{{ url('/extensions') }}">
+							Extensions
+						</a>
+
 						<a class="navbar-item" href="{{ url('/documentation') }}">
 							Documentation
 						</a>
+
+						@if (count(config('videos')) > 0)
+						<a class="navbar-item" href="{{ url('/tutorials') }}">
+							Tutorials
+						</a>
+						@endif
 
 						<a class="navbar-item" href="https://github.com/danielbrendel/dnyAquaShell" target="_blank">
 							GitHub

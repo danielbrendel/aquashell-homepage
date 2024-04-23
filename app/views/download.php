@@ -1,4 +1,3 @@
-
 <div class="content margin-fix is-left-aligned">
     <h2 class="is-font-headline">Download AquaShell</h2>
 

@@ -35,6 +35,18 @@ class IndexController extends BaseController {
 	}
 
 	/**
+	 * Handles URL: /extensions
+	 * 
+	 * @param Asatru\Controller\ControllerArg $request
+	 * @return Asatru\View\ViewHandler
+	 */
+	public function extensions($request)
+	{
+		//Generate and return a view by using the helper
+		return view('layout', array(array('content', 'extensions')));
+	}
+
+	/**
 	 * Handles URL: /documentation
 	 * 
 	 * @param Asatru\Controller\ControllerArg $request
@@ -56,5 +68,21 @@ class IndexController extends BaseController {
 			'reference_doc' => $reference_doc,
 			'tab' => $tab
 		]);
+	}
+
+	/**
+	 * Handles URL: /tutorials
+	 * 
+	 * @param Asatru\Controller\ControllerArg $request
+	 * @return Asatru\View\ViewHandler
+	 */
+	public function tutorials($request)
+	{
+		//Generate and return a view by using the helper
+		return view('layout', array(array('content', 'tutorials')),
+			[
+				'videos' => config('videos')
+			]
+		);
 	}
 }
