@@ -40,10 +40,11 @@ class IndexController extends BaseController {
 	 */
 	public function examples($request)
 	{
-		$pd = new \Parsedown();
-		$examples_doc = $pd->text(file_get_contents(app_path('/resources/md/examples.md')));
+		$snippets = SnippetsModel::getAll();
 
-		return view('layout', array(array('content', 'examples')), ['examples_doc' => $examples_doc]);
+		return view('layout', array(array('content', 'examples')), [
+			'snippets' => $snippets
+		]);
 	}
 
 	/**
