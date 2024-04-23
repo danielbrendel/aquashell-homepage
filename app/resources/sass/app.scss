@@ -254,6 +254,24 @@ pre code.hljs {
     font-size: 1.5em;
 }
 
+.doc-copy-link {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.doc-copy-link i {
+    color: rgb(30, 55, 135);
+}
+
+.doc-copy-link a {
+    color: rgb(0, 55, 190);
+}
+
+.doc-copy-link a:hover {
+    color: rgb(0, 55, 190);
+    text-decoration: underline;
+}
+
 .info-list {
     position: relative;
 }

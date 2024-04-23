@@ -52,6 +52,7 @@
             }
 
             document.getElementById('button-' + elem).style.textDecoration = 'underline';
+            document.getElementById('copy-article-link').dataset.link = window.location.origin + '/documentation?tab=' + elem;
         },
 
         scrollTo: function(target) {
@@ -59,6 +60,16 @@
             if (elem) {
                 elem.scrollIntoView({ behavior: 'smooth' });
             }
+        },
+
+        copyToClipboard: function(text, response = 'Item has been copied to clipboard.') {
+            const el = document.createElement('textarea');
+            el.value = text;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            alert(response);
         },
      }
  });
