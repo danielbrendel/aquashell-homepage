@@ -34,7 +34,7 @@
 
 	<hr/>
 
-	<h2>Make shell scripting fun on Windows again</h2>
+	<h2>Bring back the fun of shell scripting again</h2>
 
 	<p class="is-font-medium">AquaShell provides features that enrich your shell scripting experience</p>
 
