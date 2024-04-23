@@ -6,90 +6,137 @@
         The shell does also feature a few default plugins which are listed below.
     </p>
 
-    <p>
+    <div class="extension-list">
         <h3>Default extensions</h3>
 
-        <table class="other-downloads">
-            <thead>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </thead>
+        <div class="info-list">
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">Array</div>
+                    <div class="info-list-header-button"><span class="button is-link is-not-clickable">Language</span></div>
+                </div>
 
-            <tbody>
-                <tr>
-                    <td><font size="5">Array</font><br/><font color="#595959">Provides array features. There are static and dynamic arrays available.</font></td>
-                    <td><span class="button is-link is-not-clickable">Language</span></td>
-                </tr>
+                <div class="info-list-content">Provides array features. There are static and dynamic arrays available.</div>
+            </div>
 
-                <tr>
-                    <td><font size="5">Auto</font><br/><font color="#595959">Provides features to automate tasks on Windows.</font></td>
-                    <td><span class="button is-warning is-not-clickable">System</span></td>
-                </tr>
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">Auto</div>
+                    <div class="info-list-header-button"><span class="button is-warning is-not-clickable">System</span></div>
+                </div>
 
-                <tr>
-                    <td><font size="5">DateTime</font><br/><font color="#595959">A datetime utility to format date and time strings.</font></td>
-                    <td><span class="button is-link is-not-clickable">Language</span></td>
-                </tr>
+                <div class="info-list-content">Provides features to automate tasks on Windows.</div>
+            </div>
 
-                <tr>
-                    <td><font size="5">EnvVars</font><br/><font color="#595959">Exposes all environment variables to the script context.</font></td>
-                    <td><span class="button is-warning is-not-clickable">System</span></td>
-                </tr>
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">DateTime</div>
+                    <div class="info-list-header-button"><span class="button is-link is-not-clickable">Language</span></div>
+                </div>
 
-                <tr>
-                    <td><font size="5">Events</font><br/><font color="#595959">Allows registration and raising events.</font></td>
-                    <td><span class="button is-link is-not-clickable">Language</span></td>
-                </tr>
+                <div class="info-list-content">A datetime utility to format date and time strings.</div>
+            </div>
 
-                <tr>
-                    <td><font size="5">FileIO</font><br/><font color="#595959">Provides various functions to perform file system operations</font></td>
-                    <td><span class="button is-warning is-not-clickable">System</span></td>
-                </tr>
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">EnvVars</div>
+                    <div class="info-list-header-button"><span class="button is-warning is-not-clickable">System</span></div>
+                </div>
 
-                <tr>
-                    <td><font size="5">Forms</font><br/><font color="#595959">Can be used to create and handle Windows forms for GUI scripts.</font></td>
-                    <td><span class="button is-primary is-not-clickable">UI</span></td>
-                </tr>
+                <div class="info-list-content">Exposes all environment variables to the script context.</div>
+            </div>
 
-                <tr>
-                    <td><font size="5">InputBox</font><br/><font color="#595959">This component allows the usage of a simple GUI input box.</font></td>
-                    <td><span class="button is-primary is-not-clickable">UI</span></td>
-                </tr>
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">Events</div>
+                    <div class="info-list-header-button"><span class="button is-link is-not-clickable">Language</span></div>
+                </div>
 
-                <tr>
-                    <td><font size="5">IRC</font><br/><font color="#595959">A component to create IRC clients. Useful for IRC bots.</font></td>
-                    <td><span class="button is-danger is-not-clickable">Network</span></td>
-                </tr>
+                <div class="info-list-content">Allows registration and raising events.</div>
+            </div>
 
-                <tr>
-                    <td><font size="5">MiscUtils</font><br/><font color="#595959">Various commands that do not fit a specific category.</font></td>
-                    <td><span class="button is-warning is-not-clickable">System</span></td>
-                </tr>
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">FileIO</div>
+                    <div class="info-list-header-button"><span class="button is-warning is-not-clickable">System</span></div>
+                </div>
 
-                <tr>
-                    <td><font size="5">NetClient</font><br/><font color="#595959">A component to create network clients. Supports both TCP and UDP.</font></td>
-                    <td><span class="button is-danger is-not-clickable">Network</span></td>
-                </tr>
+                <div class="info-list-content">Provides various functions to perform file system operations.</div>
+            </div>
 
-                <tr>
-                    <td><font size="5">Speech</font><br/><font color="#595959">This component allows you to use the Microsoft SAPI.</font></td>
-                    <td><span class="button is-warning is-not-clickable">System</span></td>
-                </tr>
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">Forms</div>
+                    <div class="info-list-header-button"><span class="button is-primary is-not-clickable">UI</span></div>
+                </div>
 
-                <tr>
-                    <td><font size="5">Strings</font><br/><font color="#595959">A utility component to do string manipulation.</font></td>
-                    <td><span class="button is-link is-not-clickable">Language</span></td>
-                </tr>
+                <div class="info-list-content">Can be used to create and handle Windows forms for GUI scripts.</div>
+            </div>
 
-                <tr>
-                    <td><font size="5">TextInput</font><br/><font color="#595959">Used to get text input from the commandline.</font></td>
-                    <td><span class="button is-primary is-not-clickable">UI</span></td>
-                </tr>
-            </tbody>
-        </table>
-    </p>
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">InputBox</div>
+                    <div class="info-list-header-button"><span class="button is-primary is-not-clickable">UI</span></div>
+                </div>
+
+                <div class="info-list-content">This component allows the usage of a simple GUI input box.</div>
+            </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">IRC</div>
+                    <div class="info-list-header-button"><span class="button is-danger is-not-clickable">Network</span></div>
+                </div>
+
+                <div class="info-list-content">A component to create IRC clients. Useful for IRC bots.</div>
+            </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">MiscUtils</div>
+                    <div class="info-list-header-button"><span class="button is-warning is-not-clickable">System</span></div>
+                </div>
+
+                <div class="info-list-content">Various commands that do not fit a specific category.</div>
+            </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">NetClient</div>
+                    <div class="info-list-header-button"><span class="button is-danger is-not-clickable">Network</span></div>
+                </div>
+
+                <div class="info-list-content">A component to create network clients. Supports both TCP and UDP.</div>
+            </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">Speech</div>
+                    <div class="info-list-header-button"><span class="button is-warning is-not-clickable">System</span></div>
+                </div>
+
+                <div class="info-list-content">This component allows you to use the Microsoft SAPI.</div>
+            </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">Strings</div>
+                    <div class="info-list-header-button"><span class="button is-link is-not-clickable">Language</span></div>
+                </div>
+
+                <div class="info-list-content">A utility component to do string manipulation.</div>
+            </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">TextInput</div>
+                    <div class="info-list-header-button"><span class="button is-primary is-not-clickable">UI</span></div>
+                </div>
+
+                <div class="info-list-content">Used to get text input from the commandline.</div>
+            </div>
+        </div>
+    </div>
 
     <p>
         <h3>Installation</h3>
