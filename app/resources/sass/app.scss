@@ -38,6 +38,20 @@ a:hover {
     height: 42px;
 }
 
+.navbar-menu {
+    background-color: #3273dc;
+}
+
+.navbar-item {
+    color: rgb(255, 255, 255) !important;
+}
+
+.navbar-item:hover {
+    @media screen and (max-width: 1098px) {
+        background-color: unset !important;
+    }
+}
+
 .header {
     position: relative;
     width: 100%;
@@ -292,4 +306,9 @@ a:hover {
 
 .is-left-aligned {
     text-align: left;
+}
+
+.is-not-clickable {
+    cursor: unset !important;
+    min-width: 143px;
 }
