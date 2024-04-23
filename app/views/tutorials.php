@@ -6,15 +6,15 @@
     </p>
 
     <div class="tutorials">
-        @foreach ($videos as $tut)
-            <a name="{{ $tut->title }}"></a>
+        @foreach ($tutorials as $tutorial)
+            <a name="{{ $tutorial->get('title') }}"></a>
 
-            <h2 class="video-title">{{ $tut->title }}</h2><br/>
+            <h2 class="video-title">{{ $tutorial->get('title') }}</h2><br/>
 
-            <iframe width="560" height="415" src="https://www.youtube.com/embed/{{ $tut->token }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="415" src="https://www.youtube.com/embed/{{ $tutorial->get('token') }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             <p>
-                {{ $tut->description }}
+                {{ $tutorial->get('description') }}
             </p>
 
             <hr class="video-item"/>

@@ -57,7 +57,7 @@
 							Documentation
 						</a>
 
-						@if (count(config('videos')) > 0)
+						@if (TutorialsModel::count()->get() > 0)
 						<a class="navbar-item" href="{{ url('/tutorials') }}">
 							Tutorials
 						</a>

@@ -89,10 +89,10 @@ class IndexController extends BaseController {
 	 */
 	public function tutorials($request)
 	{
-		return view('layout', array(array('content', 'tutorials')),
-			[
-				'videos' => config('videos')
-			]
-		);
+		$tutorials = TutorialsModel::getAll();
+		
+		return view('layout', array(array('content', 'tutorials')), [
+			'tutorials' => $tutorials
+		]);
 	}
 }
