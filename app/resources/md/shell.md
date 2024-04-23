@@ -1,7 +1,7 @@
 This tool is an extendable scripting shell for Windows using dnyScriptInterpreter. The shell can be used either in interactive mode or just as a host for running DNYS script files. The functionality of the shell can be extended via native DLL plugins. It is best suited for automation tasks as well as complex script development.
 
 ## Example code
-```
+```aquashell
 # Example script code
 # Demonstrate recursive function calls
 
@@ -64,7 +64,7 @@ The following command line arguments exist:
 * "path/to/a/script.dnys": If the argument is an existing script file, then the shell will try to execute it.
 
 If you have added the shell path to your environment PATH variable, then you can also execute scripts as follows:
-```
+```shell
 aquashell path/to/script.dnys arg1 arg2 arg3 ... argN
 ```
 

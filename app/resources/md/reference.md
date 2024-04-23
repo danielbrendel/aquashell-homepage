@@ -2,53 +2,53 @@
 
 ### require
 This command loads a plugin. It is only needed in non-interactive mode.
-```
+```aquashell
 require "pluginname"; #Load plugin relative to the AquaShell plugin directory
 ```
 
 ### exec
 This commands executes another script file
-```
+```aquashell
 exec "scriptfile.dnys";
 ```
 You can also provide arguments:
-```
+```aquashell
 exec "scriptfile.dnys" "my arg" 123 true; # In script file "my arg" will be %1, 123 will be %2 and true will be %3
 ```
 
 ### sys
 This command passes an expression to the Windows console subsystem.
-```
+```aquashell
 sys "pause"; #Runs the pause command of the Windows console subsystem
 ```
 
 ### run
 This command launches a file. How the file is launched is determined by the Windows system settings
-```
+```aquashell
 run "path/to/file" "args to file" "directory to be run in";
 ```
 
 ### cwd
 This commands changes the current working directory. Useful when you are in interactive mode and want to change the directory.
-```
+```aquashell
 cwd "path/to/directory";
 ```
 
 ### pause
 Pauses the current script execution and waits for any key to be pressed
-```
+```aquashell
 pause;
 ```
 
 ### listlibs
 Useful in interactive mode. Lists all loaded plugins
-```
+```aquashell
 listlibs;
 ```
 
 ### quit
 Useful in interactive mode. Quits the shell
-```
+```aquashell
 quit;
 ```
 
@@ -56,7 +56,7 @@ quit;
 
 ### Array
 The array plugin provides some basic functionality to work with arrays. It differs between static and dynamic arrays.
-```
+```aquashell
 static_array "name" "data type" (list, of, items); #Creates a static array with the given items. Datatype may be one of the default dnys data types
 
 store_array_item_s (array name, index var) "target var"; #Stores an array item in any registered var with the same data type
@@ -86,7 +86,7 @@ foreach (array name, iterator variable name) { code }; #Iterates through the arr
 
 ### Auto
 The auto (automation) plugin can be used to interact with other programs, windows or controls.
-```
+```aquashell
 HWND obj_name; #Registers an object from type HWND for window management
 
 aut_findwindow "hwnd object" "window title" "window class name"; #Tries to find the window with given title and/or class name. If you want to skip one entity, use \0. Stores the found window handle in the specified object variable.
@@ -143,7 +143,7 @@ depends on your Windows system and settings
 
 ### Events
 The events plugin allows you to register events and then trigger them on any desired occassion.
-```
+```aquashell
 events.register "event name" "amount of arguments" "shall allow multiple handlers"; #Registers an event type. You need to specify the event name, a positive number that specifies the amount of arguments that a handler receives and also a bool flag if multiple handlers are allowed for that event
 
 events.add "event name" "name of callback function"; #Associate an event handler function with a given registered event
@@ -153,7 +153,7 @@ events.raise "event name" (list, of, arguments) "result var to store result"; #R
 
 ### FileIO
 The FileIO plugin allows you to access files on a storage system (e.g. hard disk, USB drive, ...). 
-```
+```aquashell
 fopen("var name to store handle", "file name", shall_append) { code to execute }; #Opens a file and optionally executes the code that handles the file operation
 
 fisopen "file handle" "result var"; #Indicates if a file has been opened
@@ -194,7 +194,7 @@ fmove "source" "destination" "result var"; #Tries to move the file from source t
 ### Forms
 The forms plugin can be used to create GUI systems consisting of windows with attached controls. This is a nice way to create more
 userfriendly interfaces and visually configure the scripted task.
-```
+```aquashell
 wnd_spawnform "form name" "form title text" x y width height "result var"; #Creates a new form and stores the handle in the result var of type int
 
 wnd_setformpos "form handle" x y; #Sets the new form position
@@ -304,7 +304,7 @@ wnd_freeform "form handle"; #Frees the form and all attached controls
 
 ### InputBox
 The InputBox plugin provides both a command and a function to graphically receive input expressions from the user.
-```
+```aquashell
 inputbox "title of inputbox" "label/description text" "default expression" xpos ypos "name of result var"; #Prompts the user and returns the input to the script
 
 #Or call the wrapper function: 
@@ -313,7 +313,7 @@ call inputbox("title", "label", "default", x, y) => result_var;
 
 ### MiscUtils
 This plugin provides various miscellaneous helper commands.
-```
+```aquashell
 addtimer "timer ident" "integer duration in milliseconds"; #Adds a timer where the callback function is executed each N milliseconds. The callback function is of following schema: function YourIdent_OnElapsed bool() {}; Its return value indicates if the timer shall be removed or stay processed
 
 timerexists "timer ident" "result var"; #Checks if the given timer exists and stores the result
@@ -338,7 +338,7 @@ gettickcount "result var"; #Gets the system tick count and writes it to the give
 ### NetClient
 The NetClient plugin can be used to perform basic network tasks. That means it can communicate with a network service on a specified port, be
 it Internet or LAN.
-```
+```aquashell
 net_spawnclient "client ident" "target service address" "target service port" ("socket type tcp/udp", "data type ansi/unicode"); #Spawns a network client to communicate with a network service. For each spawned client the following event functions must exist:
 function ClientIdent_OnConnected void() {}; #Connected to service
 function ClientIdent_OnDisconnected void() {}; #Disconnected from service
@@ -356,7 +356,7 @@ net_releaseclient "client ident"; #Releases the client, frees the memory and rem
 
 ### Speech
 The speech plugin can be used to use Microsoft SAPI to perform text2speech.
-```
+```aquashell
 spk_setvoice "voice ident"; #Sets the current available voice to use for speech
 
 spk_setpitch "pitch integer"; #Sets the current voice pitch
@@ -380,7 +380,7 @@ spk_speakasync "text"; #Speaks the given text content asynchronously. The script
 
 ### Strings
 The strings plugin can be used to perform all importan operations on strings
-```
+```aquashell
 s_getlen "string" "result var"; #Stores the length of the string in the result var
 
 s_getchar "string" "index" "result var"; #Stores the character at the given position of the string in the result var
@@ -417,7 +417,7 @@ s_fmtescseq "string token" "result var"; #Writes the actual Unicode character in
 
 ### DateTime
 This plugin provides some date and time handling commands
-```
+```aquashell
 timestamp "result int var"; # Stores the current system timestamp into the result var
 
 fmtdatetime "format string" "opt:timestamp" "result string var"; Creates a formatted datetime string and stores it into the result var. Optionally you can provide a timestamp to perform the operation on.
@@ -425,7 +425,7 @@ fmtdatetime "format string" "opt:timestamp" "result string var"; Creates a forma
 
 ### IRC
 This plugin provides commands in order to connect and communicate with an IRC server
-```
+```aquashell
 irc_spawn "identifier" "host" "port" "result var"; # Attempts to connect to an IRC server
 irc_isvalid "identifier" "boolean result var"; # Indicates whether the identifier is linked to a valid (and connected) IRC object instance
 irc_process "opt:identifier"; # Processes the IRC object. If no identifier is specified then it processes all existing IRC objects. 
@@ -435,7 +435,7 @@ irc_release "identifier"; # Releases the IRC object instance which results in cl
 
 ### TextInput
 This plugin can be used to read text input from the command line.
-```
+```aquashell
 input "target var" "A descriptive text"; #Prompts the user to input text that is stored into the var
 
 setinput "var name" "A descriptive text"; #Same as 'input' with the exception that the variable will be registered if it not already exists

@@ -45,6 +45,10 @@
 							Download
 						</a>
 
+						<a class="navbar-item" href="{{ url('/examples') }}">
+							Examples
+						</a>
+
 						<a class="navbar-item" href="{{ url('/extensions') }}">
 							Extensions
 						</a>
@@ -134,6 +138,29 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', function(){
 				window.vue.initNavbar();
+
+				window.hljs.registerLanguage('aquashell', function() {
+					return {
+						case_insensitive: false,
+						keywords: {
+							keyword: 'global const set if function elseif else for while local result unset call class method member construct destruct require exec run cwd listlibs print sys pause exit quit',
+							literal: 'bool int float string void true false',
+						},
+						contains: [
+						{
+							className: 'string',
+							begin: '"',
+							end: '"'
+						},
+						hljs.COMMENT(
+							'#',
+							"\n",
+							{}
+						)
+						]
+					}
+				});
+				window.hljs.highlightAll();
 
 				if (document.getElementById('button-aquashell')) {
 					document.getElementById('button-aquashell').click();

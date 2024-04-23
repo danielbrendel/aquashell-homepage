@@ -18,7 +18,6 @@ class IndexController extends BaseController {
 	 */
 	public function index($request)
 	{
-		//Generate and return a view by using the helper
 		return view('layout', array(array('content', 'index')),['show_header' => true]);
 	}
 
@@ -30,8 +29,21 @@ class IndexController extends BaseController {
 	 */
 	public function download($request)
 	{
-		//Generate and return a view by using the helper
 		return view('layout', array(array('content', 'download')));
+	}
+
+	/**
+	 * Handles URL: /examples
+	 * 
+	 * @param Asatru\Controller\ControllerArg $request
+	 * @return Asatru\View\ViewHandler
+	 */
+	public function examples($request)
+	{
+		$pd = new \Parsedown();
+		$examples_doc = $pd->text(file_get_contents(app_path('/resources/md/examples.md')));
+
+		return view('layout', array(array('content', 'examples')), ['examples_doc' => $examples_doc]);
 	}
 
 	/**
@@ -42,7 +54,6 @@ class IndexController extends BaseController {
 	 */
 	public function extensions($request)
 	{
-		//Generate and return a view by using the helper
 		return view('layout', array(array('content', 'extensions')));
 	}
 
@@ -61,7 +72,6 @@ class IndexController extends BaseController {
 
 		$tab = $request->params()->query('tab', 'aquashell');
 
-		//Generate and return a view by using the helper
 		return view('layout', [['content', 'documentation']], [
 			'shell_doc' => $shell_doc,
 			'scripting_doc' => $scripting_doc,
@@ -78,7 +88,6 @@ class IndexController extends BaseController {
 	 */
 	public function tutorials($request)
 	{
-		//Generate and return a view by using the helper
 		return view('layout', array(array('content', 'tutorials')),
 			[
 				'videos' => config('videos')

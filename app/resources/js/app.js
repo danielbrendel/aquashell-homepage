@@ -6,6 +6,11 @@
 
  import './../sass/app.scss';
 
+ import hljs from 'highlight.js';
+ import 'highlight.js/scss/github.scss';
+
+ window.hljs = hljs;
+
  window.vue = new Vue({
      el: '#main',
 

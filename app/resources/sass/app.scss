@@ -150,6 +150,22 @@ a:hover {
     border-radius: 5px;
 }
 
+pre code.hljs {
+    background-color: rgb(90, 165, 235);
+}
+
+.hljs-comment {
+    color: rgb(136, 228, 148) !important;
+}
+
+.hljs-keyword {
+    color: #ca0505 !important;
+}
+
+.hljs-string {
+    color: #c2d9f5 !important;
+}
+
 .image-showcase {
     position: relative;
     width: 100%;

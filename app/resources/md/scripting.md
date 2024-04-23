@@ -7,7 +7,7 @@
  
 ## Syntax:
 The script language is a command-based language. This makes the syntax be as follows:
-```
+```aquashell
 (cmd_ident) (expression2) (expression3) (expression n...);
 ```
 Now 'cmd_ident' is the identifier of a specific command. 'expression2' - 'expression n'
@@ -15,7 +15,7 @@ are considered arguments to a specific command. Each command must be ended with 
 In order to allow complex scripts it is neccessary to summarize/collect expressions with collector characters. 
 These are quotation marks ("") and brackets ("()" and "{}"). This allows you to format your command call
 as follows:
-```
+```aquashell
 myCommandIdent "argument1" (argument2a, arguments3a, ...) { complex argument ("test1", "test2");};
 ```
 Each command or empty line can be noted with a '#(comment)' to comment your scripts.
@@ -24,12 +24,12 @@ to have a better glance at your scripts. Some commands require an argument expre
 Altough not neccessarly required you should put argument expressions in () brackets and code expressions
 in {} brackets (note: it depends on the command provider whether argument or code expressions are required. 
 Most of the times you will just encounter parameterized commands). See the example below:
-```
+```aquashell
 #The following function implementation works, but is bad style
 function myFunction void "arg1 string, arg2 string" "print %arg1%arg2;";
 ```
 You can see that you couldn't include spacing between the argument accessor code. A better example would be:
-```
+```aquashell
 function myFunction void(arg1 string, arg2 string)
 {
 	print "%arg1 %arg2"; #This is a comment
@@ -47,7 +47,7 @@ a comment is ignored by the parser.
 2) Declaring global and local variables
 
 Declare a global variable
-```
+```aquashell
 global name type;
 ```
 There are the following system types available:
@@ -57,11 +57,11 @@ There are the following system types available:
 - string -> A string
 Additionally custom variable data types can be used.
 A declaration then is applied as follows:
-```
+```aquashell
 global name customtypename;
 ```
 Local variables are declared as follows:
-```
+```aquashell
 local name datatype;
 ```
 Local function variables are automatically removed after the function has finished.
@@ -69,7 +69,7 @@ If you have a local and a global variable with the same name then the local vari
 is prefered. As a result of that clean naming is advised.
 
 You can also initially declare a variable when setting a value. The context is then automatically determined:
-```
+```aquashell
 function testfunc void()
 {
 	set context_local string <= "I am a local variable";
@@ -80,7 +80,7 @@ set context_global string <= "I am a global variable";
 
 
 3) Assigning values to variables
-```
+```aquashell
 global name1 int;
 set name1 <= 100;
 local name2 string;
@@ -88,7 +88,7 @@ set name2 <= "This is a test";
 ```
 
 4) Creating functions
-```
+```aquashell
 function myFunction type(arguments)
 {
 	# function implementation here
@@ -98,7 +98,7 @@ function myFunction type(arguments)
 Functions can either return a value or not. Also providing arguments is optional.
 The function arguments can handle the same types as shown in the variables section.
 If a function shall not return a value then the returntype shall be set as 'void'.
-```
+```aquashell
 function myVoidFunction void()
 {
 };
@@ -114,13 +114,13 @@ function myComplexFunction int(arg1 string, arg2 float, arg3 bool)
 };
 ```
 The functions are called as follows:
-```
+```aquashell
 call myVoidFunction();
 call myFloatFunction() => myFloatVar;
 call myComplexFunction("test1", 0.1, true) => myIntVar;
 ```
 You can also use local variables in functions:
-```
+```aquashell
 function myMoreComplexFunction float(arg1 float)
 {
 	local temp float;
@@ -132,7 +132,7 @@ function myMoreComplexFunction float(arg1 float)
 
 5) Defining classes
 Sometimes tasks should be bound to objects. dnyScript provides a basic class structure functionality.
-```
+```aquashell
 class ClassName {
 	method myTestMethod void()
 	{
@@ -145,7 +145,7 @@ You can define methods and variables similar to the global scope. Instead of usi
 'method'. And for member variables you use the keyword 'member'. Member variables are automatically allocated upon
 class instantiation and freed after the class instance gets removed from memory.
 You can also define a constructor and a destructor.
-```
+```aquashell
 class MyTestClass {
 	method construct void()
 	{
@@ -161,7 +161,7 @@ class MyTestClass {
 To access methods or members inside the class context you can use %this.
 When accessing the class instance from outside you must prefix the class 
 instance identifier with an @ character except when accessing member variables.
-```
+```aquashell
 global classInstance class;
 set @classInstance <= MyTestClass;
 call @classInstance.SomeMethod() => void;
@@ -173,16 +173,16 @@ unset @classInstance;
 The script user can implement own script commands which can retrieve arguments
 and also return a value. 
 #A void command:
-```
+```aquashell
 myCommand "stringarg"
 ```
 #A value-returning command:
-```
+```aquashell
 global myStorageVar type;
 myRetValCommand "stringarg" myStorageVar;
 ```
 For void-commands you need to implement the IVoidCommandInterface class and for
-value-returning commands you need to implement the IResultCommandInterface<type> class.
+value-returning commands you need to implement the IResultCommandInterface&lt;type&gt; class.
 Note that both type of commands can return a boolean value to indicate errors. These
 errors are handled solely by the script engine and you should only indicate errors
 if the script execution is considered uncontinueable. If you want to return values which 
@@ -190,7 +190,7 @@ do not affect further script execution and which shall be handled by the script 
 you should stick to the result-command interface. It supports all dny-data types.
 
 ## Internal command reference:
-```
+```shell
 const constname consttype <= value; //Registers a constant with the given name, type and value\
 global varname vartype; //Registers a global variable with the associated type\
 set varname <= value; //Assigns a value to a global/local variable\

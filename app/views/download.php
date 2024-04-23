@@ -31,27 +31,27 @@
 
             <tbody>
                 <tr>
-                    <td><font size="5">AquaShell Plugin SDK</font><br/><font color="#646464">Use the C++ SDK to create your own native plugins</font></td>
+                    <td><font size="5">AquaShell Plugin SDK</font><br/><font color="#595959">Use the C++ SDK to create your own native plugins</font></td>
                     <td><a class="button is-link" href="{{ asset('downloads/plugin_sdk.zip') }}">Download</a></td>
                 </tr>
 
                 <tr>
-                    <td><font size="5">AquaShell sourcecode</font><br/><font color="#646464">If you want to have a quick look. GitHub is prefered for contributing</font></td>
+                    <td><font size="5">AquaShell sourcecode</font><br/><font color="#595959">If you want to have a quick look. GitHub is prefered for contributing</font></td>
                     <td><a class="button is-link" href="https://github.com/danielbrendel/dnyAquaShell">Download</a></td>
                 </tr>
 
                 <tr>
-                    <td><font size="5">VS Code Extension</font><br/><font color="#646464">Syntax highlighting for Visual Studio Code</font></td>
+                    <td><font size="5">VS Code Extension</font><br/><font color="#595959">Syntax highlighting for Visual Studio Code</font></td>
                     <td><a class="button is-link" href="https://marketplace.visualstudio.com/items?itemName=danielbrendel.dnyscript-syntax">Download</a></td>
                 </tr>
 
                 <tr>
-                    <td><font size="5">Notepad++ language definition</font><br/><font color="#646464">Syntax highlighting definition file for Notepad++</font></td>
+                    <td><font size="5">Notepad++ language definition</font><br/><font color="#595959">Syntax highlighting definition file for Notepad++</font></td>
                     <td><a class="button is-link" href="https://github.com/aquashell-scripting/aquashell-scripting.github.io/blob/main/res/dnyScript_npp_highlighting.xml">Download</a></td>
                 </tr>
 
                 <tr>
-                    <td><font size="5">dnyScriptInterpreter</font><br/><font color="#646464">Use the core scripting system in your own product</font></td>
+                    <td><font size="5">dnyScriptInterpreter</font><br/><font color="#595959">Use the core scripting system in your own product</font></td>
                     <td><a class="button is-link" href="https://github.com/danielbrendel/dnyScriptInterpreter">Download</a></td>
                 </tr>
             </tbody>
