@@ -3,11 +3,17 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-with, initial-scale=1.0">
-		<meta name="author" content="Daniel Brendel">
-		<meta name="description" content="AquaShell is a scripting and automation shell for Windows using dnyScriptInterpreter">
-		<meta name="tags" content="scripting, shell, automation, windows, x64, extendable">
+
+		<meta name="author" content="{{ env('APP_AUTHOR') }}">
+		<meta name="description" content="{{ env('APP_DESCRIPTION') }}">
+		<meta name="keywords" content="{{ env('APP_KEYWORDS') }}">
+
+		<meta name="og:title" property="og:title" content="{{ env('APP_TITLE') }}">
+		<meta name="og:description" property="og:description" content="{{ env('APP_DESCRIPTION') }}">
+		<meta name="og:url" property="og:url" content="{{ url('/') }}">
+		<meta name="og:image" property="og:image" content="{{ asset('img/preview.png') }}">
 		
-		<title>AquaShell - A scripting and automation shell for Windows</title>
+		<title>{{ env('APP_TITLE') }}</title>
 
 		<link rel="icon" type="image/png" href="{{ asset('img/logo.png') }}"/>
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/bulma.css') }}"/>

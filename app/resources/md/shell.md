@@ -71,7 +71,7 @@ aquashell path/to/script.dnys arg1 arg2 arg3 ... argN
 ## Plugin API:
 Plugins must be written in compatibility with the shell application. 
 
-A plugin needs to export the functions `dnyAS_PluginLoad` and `dnyAS_PluginUnload`.
+A plugin needs to export the functions <strong>dnyAS_PluginLoad</strong> and <strong>dnyAS_PluginUnload</strong>.
 
 ```cpp
 bool dnyAS_PluginLoad(dnyVersionInfo version, IShellPluginAPI* pInterfaceData, plugininfo_s* pPluginInfos);
