@@ -28,7 +28,7 @@
 	
 	<body>
 		<div id="main">
-			<nav class="navbar is-link" role="navigation" aria-label="main navigation">
+			<nav class="navbar is-link is-fixed-top" role="navigation" aria-label="main navigation">
 				<div class="navbar-brand">
 					<a class="navbar-item navbar-item-brand is-font-title" href="{{ url('/') }}">
 						<img src="{{ asset('img/logo.png') }}" alt="Logo"/>&nbsp;AquaShell
