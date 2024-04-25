@@ -5,9 +5,17 @@
         Watch tutorial videos in order to get familiar with AquaShell scripting.
     </p>
 
+    <ul>
+        @foreach ($tutorials as $tutorial)
+            <li>
+                <a href="#{{ slug($tutorial->get('title')) }}">{{ $tutorial->get('title') }}</a>
+            </li>
+        @endforeach
+    </ul>
+
     <div class="tutorials">
         @foreach ($tutorials as $tutorial)
-            <a name="{{ $tutorial->get('title') }}"></a>
+            <a name="{{ slug($tutorial->get('title')) }}"></a>
 
             <h2 class="video-title">{{ $tutorial->get('title') }}</h2><br/>
 

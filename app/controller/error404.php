@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Example error 404 controller
+ * Error 404 controller
  */
 class Error404Controller extends BaseController {
 	/**

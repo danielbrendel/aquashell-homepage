@@ -1,13 +1,7 @@
 <?php
 
-/*
-    Asatru PHP - Example controller
-
-    Add here all your needed routes implementations related to 'index'.
-*/
-
 /**
- * Example index controller
+ * Index controller
  */
 class IndexController extends BaseController {
 	/**
@@ -18,7 +12,9 @@ class IndexController extends BaseController {
 	 */
 	public function index($request)
 	{
-		return view('layout', array(array('content', 'index')),['show_header' => true]);
+		return view('layout', array(array('content', 'index')), [
+			'show_header' => true
+		]);
 	}
 
 	/**
