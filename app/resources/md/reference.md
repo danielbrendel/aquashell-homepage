@@ -89,7 +89,7 @@ The auto (automation) plugin can be used to interact with other programs, window
 ```aquashell
 HWND obj_name; #Registers an object from type HWND for window management
 
-aut_findwindow "hwnd object" "window title" "window class name"; #Tries to find the window with given title and/or class name. If you want to skip one entity, use \0. Stores the found window handle in the specified object variable.
+aut_findwindow "hwnd object" "window class name" "window title"; #Tries to find the window with given title and/or class name. If you want to skip one entity, use \0. Stores the found window handle in the specified object variable.
 
 aut_iswindow "hwnd object" "result var"; #Stores whether the given window is still valid in the result var of type bool.
 

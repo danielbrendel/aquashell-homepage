@@ -190,35 +190,35 @@ do not affect further script execution and which shall be handled by the script 
 you should stick to the result-command interface. It supports all dny-data types.
 
 ## Internal command reference:
-```shell
-const constname consttype <= value; //Registers a constant with the given name, type and value\
-global varname vartype; //Registers a global variable with the associated type\
-set varname <= value; //Assigns a value to a global/local variable\
-unset varname; //Removes a global variable\
-function name rettype(paramters) {code} //Defines a function\
-local varname vartype; //Registers a local function variable inside a function with the associated type\
-result value; //Sets the result value of the associated function\
-call funcname(arguments) => resultvar; //Calls a function with paramters (if required) and stores the result (if required)\
-if (cond1, operation, cond2) {code}; <elseif (cond1, operation, cond2) {code}> <else {code}> //Performs an if-elseif-else evaluation. Elseif's and else's are optional. 'operation' can either be -eq(equal), -nt(not equal), -ls(less than), -lse(less than or equal), -gr(greater than) and -gre(greater than or equal).\
-for (varname, startvalue, endvalue, step, opt:param) {code}; //Performs a for-loop with positive or negative values (use -inc for 1 and -dec for -1 or a step value. Param can be -eq if the loop var shall be inclusive to the loop end value, default behaviour is non-inclusive)
-while (cond1, operation, cond2) {code} //Performs a while-loop. 'operation' can either be -eq(equal), -nt(not equal), -ls(less than), -lse(less than or equal), -gr(greater than) and -gre(greater than or equal).\
-class name { code }; //Define a class structure
-method name rettype(parameters) { code }; //Implement a class method 
-member name vartype; //Define a class member variable
-execute scriptfile; //Executes a script file relative to the base directory\
-print text; //Prints text to the standard output if set by script user\
-exit; //Aborts script execution\
-++ var; //Increments a variable\
--- var; //Decrements a variable\
-+= var value; //Adds the value to the variable\
--= var value; //Subtracts the value from the variable\
-*= var value; //Multiplicates the value to the variable\
-/= var value; //Divides the value from the variable\
-+ var value1 value2; //Stores the sum to the variable\
-- var value1 value2; //Stores the difference to the variable\
-* var value1 value2; //Stores the product to the variable\
-/ var value1 value2; //Stores the quotient to the variable\
-! boolvar; //Reverses the boolean value of the variable
+```aquashell
+const constname consttype <= value; #Registers a constant with the given name, type and value\
+global varname vartype; #Registers a global variable with the associated type\
+set varname <= value; #Assigns a value to a global/local variable\
+unset varname; #Removes a global variable\
+function name rettype(paramters) {code} #Defines a function\
+local varname vartype; #Registers a local function variable inside a function with the associated type\
+result value; #Sets the result value of the associated function\
+call funcname(arguments) => resultvar; #Calls a function with paramters (if required) and stores the result (if required)\
+if (cond1, operation, cond2) {code} elseif (cond1, operation, cond2) {code} else {code}; #Performs an if-elseif-else evaluation. Elseif's and else's are optional. 'operation' can either be -eq(equal), -nt(not equal), -ls(less than), -lse(less than or equal), -gr(greater than) and -gre(greater than or equal).\
+for (varname, startvalue, endvalue, step, opt:param) {code}; #Performs a for-loop with positive or negative values (use -inc for 1 and -dec for -1 or a step value. Param can be -eq if the loop var shall be inclusive to the loop end value, default behaviour is non-inclusive)
+while (cond1, operation, cond2) {code} #Performs a while-loop. 'operation' can either be -eq(equal), -nt(not equal), -ls(less than), -lse(less than or equal), -gr(greater than) and -gre(greater than or equal).\
+class name { code }; #Define a class structure
+method name rettype(parameters) { code }; #Implement a class method 
+member name vartype; #Define a class member variable
+execute scriptfile; #Executes a script file relative to the base directory\
+print text; #Prints text to the standard output if set by script user\
+exit; #Aborts script execution\
+++ var; #Increments a variable\
+-- var; #Decrements a variable\
++= var value; #Adds the value to the variable\
+-= var value; #Subtracts the value from the variable\
+*= var value; #Multiplicates the value to the variable\
+/= var value; #Divides the value from the variable\
++ var value1 value2; #Stores the sum to the variable\
+- var value1 value2; #Stores the difference to the variable\
+* var value1 value2; #Stores the product to the variable\
+/ var value1 value2; #Stores the quotient to the variable\
+! boolvar; #Reverses the boolean value of the variable
 ```
  
 ## Usage:
