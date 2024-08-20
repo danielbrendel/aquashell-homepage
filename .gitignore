@@ -1,6 +1,7 @@
 /app/logs
-/app/db
+/app/migrations/migrations.list
 /vendor
 /node_modules
+/.idea
 .env
 .phpunit.result.cache
