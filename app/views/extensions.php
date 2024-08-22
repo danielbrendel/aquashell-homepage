@@ -75,11 +75,11 @@
 
             <div class="info-list-item">
                 <div class="info-list-header">
-                    <div class="info-list-header-title">InputBox</div>
+                    <div class="info-list-header-title">Input</div>
                     <div class="info-list-header-button"><span class="button is-primary is-not-clickable">UI</span></div>
                 </div>
 
-                <div class="info-list-content">This component allows the usage of a simple GUI input box.</div>
+                <div class="info-list-content">This component provides input methods via CLI and GUI.</div>
             </div>
 
             <div class="info-list-item">
@@ -89,15 +89,6 @@
                 </div>
 
                 <div class="info-list-content">A component to create IRC clients. Useful for IRC bots.</div>
-            </div>
-
-            <div class="info-list-item">
-                <div class="info-list-header">
-                    <div class="info-list-header-title">MiscUtils</div>
-                    <div class="info-list-header-button"><span class="button is-warning is-not-clickable">System</span></div>
-                </div>
-
-                <div class="info-list-content">Various commands that do not fit a specific category.</div>
             </div>
 
             <div class="info-list-item">
@@ -125,15 +116,6 @@
                 </div>
 
                 <div class="info-list-content">A utility component to do string manipulation.</div>
-            </div>
-
-            <div class="info-list-item">
-                <div class="info-list-header">
-                    <div class="info-list-header-title">TextInput</div>
-                    <div class="info-list-header-button"><span class="button is-primary is-not-clickable">UI</span></div>
-                </div>
-
-                <div class="info-list-content">Used to get text input from the commandline.</div>
             </div>
         </div>
     </div>

@@ -4,6 +4,8 @@
 This command loads a plugin. It is only needed in non-interactive mode.
 ```aquashell
 require "pluginname"; #Load plugin relative to the AquaShell plugin directory
+
+require __ALL__; #Load all available plugins from the plugin directory
 ```
 
 ### exec
@@ -13,13 +15,16 @@ exec "scriptfile.dnys";
 ```
 You can also provide arguments:
 ```aquashell
-exec "scriptfile.dnys" "my arg" 123 true; # In script file "my arg" will be %1, 123 will be %2 and true will be %3
+exec "scriptfile.dnys" "my arg" 123 true; # In script file "my arg" will be %1, 123 will be %2 and true will be %3. 
+# You can also access the amount of arguments via %argc and a specific argument via %argv[N].
 ```
 
 ### sys
 This command passes an expression to the Windows console subsystem.
 ```aquashell
 sys "pause"; #Runs the pause command of the Windows console subsystem
+
+sys "set" storagevar; #Runs the set command (which will print all environment variables) and stores this output into the result string var
 ```
 
 ### run
@@ -29,9 +34,63 @@ run "path/to/file" "args to file" "directory to be run in";
 ```
 
 ### cwd
-This commands changes the current working directory. Useful when you are in interactive mode and want to change the directory.
+This commands changes the current working directory.
 ```aquashell
 cwd "path/to/directory";
+```
+
+### gwd
+This commands stores the current working directory in the storage string var.
+```aquashell
+gwd "storage_var";
+```
+
+### getscriptpath
+This command stores the full path to the executed script
+```aquashell
+getscriptpath "result var";
+```
+
+### getscriptname
+This command stores the full path including the script file name
+```aquashell
+getscriptname "result var";
+```
+
+### textview
+This commands prints the text contents of a file to the current output
+```aquashell
+textview "path/to/file";
+```
+
+### random
+This commands generates a random number from start to end (inclusive)
+```aquashell
+random start end "result var"; 
+```
+
+### sleep
+Pauses the main thread for N milliseconds
+```aquashell
+sleep 1000; #Will pause the main thread for 1 second (= 1000 milliseconds)
+```
+
+### gettickcount
+Stores the elapsed time in milliseconds since the operating system was started
+```aquashell
+gettickcount "result int var";
+```
+
+### getsystemerror
+Stores the current system error number into the result int var
+```aquashell
+getsystemerror "result var";
+```
+
+### setsystemerror
+Sets the current system error number
+```aquashell
+setsystemerror "number";
 ```
 
 ### pause
@@ -47,7 +106,7 @@ listlibs;
 ```
 
 ### quit
-Useful in interactive mode. Quits the shell
+Quits the shell. Useful in interactive mode. If you however want to exit the current script, you should use the command <strong>exit</strong> instead.
 ```aquashell
 quit;
 ```
@@ -57,19 +116,13 @@ quit;
 ### Array
 The array plugin provides some basic functionality to work with arrays. It differs between static and dynamic arrays.
 ```aquashell
-static_array "name" "data type" (list, of, items); #Creates a static array with the given items. Datatype may be one of the default dnys data types
+array "array name" "data type" "initial size as positive number" (list of initial items) #Registers an array
 
-store_array_item_s (array name, index var) "target var"; #Stores an array item in any registered var with the same data type
+store_array_item "name of array" "positive index of array item" "target var"; #Stores the array item expression to the given variable of same type
 
-free_array_s "array name"; #Removes the array and frees the memory
+store_item_to_array "source variable" "array name" "positive index of array item to save to"; #Stores the expression of the variable to the specified array item
 
-dynamic_array "array name" "data type" "initial size as positive number" (list of initial items) #Registers a dynamic array
-
-store_array_item_d "name of array" "positive index of array item" "target var"; #Stores the array item expression to the given variable of same type
-
-store_item_to_array_d "source variable" "array name" "positive index of array item to save to"; #Stores the expression of the variable to the specified array item
-
-copy_array_item_d "source array name" "positive index" "target array name" "positive index"; #Copies one array value to another array item
+copy_array_item "source array name" "positive index" "target array name" "positive index"; #Copies one array value to another array item
 
 resize_array "array name" "new array size"; #Resizes the array with new dimension
 
@@ -77,39 +130,35 @@ item_insert "array name" "position to insert" "expression"; #Inserts the express
 
 item_append "array name" "expression"; #Appends the expression to the array
 
-free_array_d "array name"; #Removes the array and frees the memory
+item_remove "array name" "index"; #Removes the item at the given position
 
-asetindex "index value"; #Sets the common array index value
-
-foreach (array name, iterator variable name) { code }; #Iterates through the array and executes the given code for each iteration
+free_array "array name"; #Removes the array and frees the memory
 ```
 
 ### Auto
 The auto (automation) plugin can be used to interact with other programs, windows or controls.
 ```aquashell
-HWND obj_name; #Registers an object from type HWND for window management
+aut_findwindow "window class name" "window title" "result var"; #Tries to find the window with given title and/or class name. If you want to skip one entity, use \0. Stores the found window handle in the specified result variable.
 
-aut_findwindow "hwnd object" "window class name" "window title"; #Tries to find the window with given title and/or class name. If you want to skip one entity, use \0. Stores the found window handle in the specified object variable.
+aut_iswindow "hwnd" "result var"; #Stores whether the given window is still valid in the result var of type bool.
 
-aut_iswindow "hwnd object" "result var"; #Stores whether the given window is still valid in the result var of type bool.
+aut_getfgwindow "result var"; #Stores the foreground window handle in the object variable if any found
 
-aut_getfgwindow "hwnd object"; #Stores the foreground window handle in the object variable if any found
+aut_setfgwindow "hwnd" "result var"; #Tries to set the given window to foreground and stores the result in the result var of type bool
 
-aut_setfgwindow "hwnd object" "result var"; #Tries to set the given window to foreground and stores the result in the result var of type bool
+aut_setwndpos "hwnd" "xpos" "ypos" "result var"; #Tries to set the window position to the given coords. Stores the result in the result var of type bool
 
-aut_setwndpos "hwnd object" "xpos" "ypos" "result var"; #Tries to set the window position to the given coords. Stores the result in the result var of type bool
+aut_getwndpos "hwnd" "result var x" "result var y" "operation result"; #Tries to get the window position and stores x and y in the variables. Also the operation result is stored in a result variable of type bool
 
-aut_getwndpos "hwnd object" "result var x" "result var y" "operation result"; #Tries to get the window position and stores x and y in the variables. Also the operation result is stored in a result variable of type bool
+aut_getwndsize "hwnd" "result var width" "result var height" "operation result"; #Tries to get the width and height of a window and stores the data. Also the operation result is stored in the result var of type bool
 
-aut_getwndsize "hwnd object" "result var width" "result var height" "operation result"; #Tries to get the width and height of a window and stores the data. Also the operation result is stored in the result var of type bool
+aut_setwndtext "hwnd" "new text" "result var"; #Tries to set the given windows text. Operation result is stored in result var of type bool
 
-aut_setwndtext "hwnd object" "new text" "result var"; #Tries to set the given windows text. Operation result is stored in result var of type bool
+aut_getwndtext "hwnd" "result var"; #Stores the window text of the specified window in the result var of type string
 
-aut_getwndtext "hwnd object" "result var"; #Stores the window text of the specified window in the result var of type string
+aut_getclassname "hwnd" "result var"; #Stores the window class name of the specified window in the result var of type string
 
-aut_getclassname "hwnd object" "result var"; #Stores the window class name of the specified window in the result var of type string
-
-aut_showwnd "hwnd object" "style" "result var"; #Tries to set the show style of a window. Stores the operation result in the result var
+aut_showwnd "hwnd" "style" "result var"; #Tries to set the show style of a window. Stores the operation result in the result var
 
 aut_getcursorpos "result var x" "result var y" "operation result"; #Get cursor position and store the values in the variables. Also stores the operation result in the op result var
 
@@ -133,7 +182,23 @@ aut_addkeyevent "name of function to call" "key number to hook into" "operation 
 
 aut_addmouseevent "name of function to call" "mouse number to hook into" "operation result"; #Add a mouse hook. The function to be called is of following definition: function MouseEvent void(isshift bool, isctrl bool, isalt bool) {}; Note it is only called for pressed event, not down or up
 
+aut_sendmessage "hwnd" "msg" "wparam" "lparam" "result var"; #Sends the given message with params to the given window and returns its result.
+
+aut_postmessage "hwnd" "msg" "wparam" "lparam" "result var"; #Posts the given message with params to the given window. Will return true if the given message was put into the posting queue, not the actual result from the target window. 
+
+aut_clpbsetstring "text"; #Stores the given expression as text in the clipboard
+
+aut_clpbgetstring "result var"; #Stores the current clipboard data as text in the result var
+
+aut_clpbclear; #Clears the clipboard data regardless of the content type
+
+aut_addtimer "ident" "delay"; #Adds a timer where the callback function is executed each N milliseconds. The callback function is of following schema: function ident_OnElapsed bool() {}; Its return value indicates if the timer shall be removed or stay processed
+
+aut_timerexists "timer ident" "result var"; #Indicates if a timer with the given ident exists.
+
 aut_procevents; #Call this in your main loop in order to process all your hooks
+
+aut_calctimers; #Call this in your main loop in order to process all timers
 ```
 
 ### EnvVars
@@ -154,7 +219,7 @@ events.raise "event name" (list, of, arguments) "result var to store result"; #R
 ### FileIO
 The FileIO plugin allows you to access files on a storage system (e.g. hard disk, USB drive, ...). 
 ```aquashell
-fopen("var name to store handle", "file name", shall_append) { code to execute }; #Opens a file and optionally executes the code that handles the file operation
+fopen "file name", "shall_append" "result handle"; #Opens the given file for read/write operations and stores the file handle in the result var. You can check if the handle is valid via the constant %FIO_INVALID_HANDLE.
 
 fisopen "file handle" "result var"; #Indicates if a file has been opened
 
@@ -200,6 +265,8 @@ wnd_spawnform "form name" "form title text" x y width height "result var"; #Crea
 wnd_setformpos "form handle" x y; #Sets the new form position
 
 wnd_setformres "form handle" w h; #Sets the new form resolution
+
+wnd_setformtitle "form handle" "new title"; #Updates the form title with the given text
 
 wnd_setcomppos "form handle" "component type" "component name" x y; #Sets the new position of a form component
 
@@ -302,37 +369,12 @@ wnd_process; #Processes all window events. Should be called in a main loop
 wnd_freeform "form handle"; #Frees the form and all attached controls
 ```
 
-### InputBox
+### Input
 The InputBox plugin provides both a command and a function to graphically receive input expressions from the user.
 ```aquashell
-inputbox "title of inputbox" "label/description text" "default expression" xpos ypos "name of result var"; #Prompts the user and returns the input to the script
+input "target var" "A descriptive text"; #Prompts the user to input text that is stored into the var
 
-#Or call the wrapper function: 
-call inputbox("title", "label", "default", x, y) => result_var;
-```
-
-### MiscUtils
-This plugin provides various miscellaneous helper commands.
-```aquashell
-addtimer "timer ident" "integer duration in milliseconds"; #Adds a timer where the callback function is executed each N milliseconds. The callback function is of following schema: function YourIdent_OnElapsed bool() {}; Its return value indicates if the timer shall be removed or stay processed
-
-timerexists "timer ident" "result var"; #Checks if the given timer exists and stores the result
-
-calctimers; #Processes all timers. This should be run from your main loop
-
-textview "file/to/view"; #This is just a command to print the whole content of a text file to the output
-
-random "start" "max" "result var"; #Generates a random number between 'start' and 'max' (inclusive). Stores the result in the result variable
-
-sleep "time in milliseconds"; #Let's the script execution pause for the given amount of milliseconds
-
-clpb_setstring "text content"; #Writes the given string expression to clipboard
-
-clpb_getstring "result var"; #Writes the contents of the clipboard (if it is text) to the result variable
-
-clpb_clear; #Clears the clipboard content
-
-gettickcount "result var"; #Gets the system tick count and writes it to the given result variable
+inputbox "title of inputbox" "label/description text" "default expression" xpos ypos "name of result var"; #Prompts the user via GUI and returns the input to the script
 ```
 
 ### NetClient
@@ -431,12 +473,4 @@ irc_isvalid "identifier" "boolean result var"; # Indicates whether the identifie
 irc_process "opt:identifier"; # Processes the IRC object. If no identifier is specified then it processes all existing IRC objects. 
 irc_send "identifier" "message"; # Attempts to send a message to the server associated with the given object instance
 irc_release "identifier"; # Releases the IRC object instance which results in closing the connection.
-```
-
-### TextInput
-This plugin can be used to read text input from the command line.
-```aquashell
-input "target var" "A descriptive text"; #Prompts the user to input text that is stored into the var
-
-setinput "var name" "A descriptive text"; #Same as 'input' with the exception that the variable will be registered if it not already exists
 ```
