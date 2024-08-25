@@ -25,8 +25,8 @@
                 Examples
             </a>
 
-            <a class="navbar-item" href="{{ url('/extensions') }}">
-                Extensions
+            <a class="navbar-item" href="{{ url('/plugins') }}">
+                Plugins
             </a>
 
             <a class="navbar-item" href="{{ url('/documentation') }}">

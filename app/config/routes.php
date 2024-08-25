@@ -20,7 +20,7 @@ return [
     array('/index', 'GET', 'index@index'),
     array('/download', 'GET', 'index@download'),
     array('/examples', 'GET', 'index@examples'),
-    array('/extensions', 'GET', 'index@extensions'),
+    array('/plugins', 'GET', 'index@plugins'),
     array('/documentation', 'GET', 'index@documentation'),
     array('/tutorials', 'GET', 'index@tutorials'),
     array('$404', 'ANY', 'error404@index')

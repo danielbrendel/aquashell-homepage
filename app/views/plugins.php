@@ -1,5 +1,5 @@
 <div class="content margin-fix is-left-aligned">
-    <h2 class="is-font-headline">Extensions</h2>
+    <h2 class="is-font-headline">Plugins</h2>
 
     <p>
         AquaShell can be extended via plugins in order to provide additional functionality to scripts.
@@ -7,7 +7,7 @@
     </p>
 
     <div class="extension-list">
-        <h3>Default extensions</h3>
+        <h3>Default plugins</h3>
 
         <div class="info-list">
             <div class="info-list-item">
@@ -123,7 +123,7 @@
     <p>
         <h3>Installation</h3>
 
-        Unless not specified otherwise, extensions are placed into the <strong>/plugins</strong> directory of your AquaShell installation.
+        Unless not specified otherwise, plugins are placed into the <strong>/plugins</strong> directory of your AquaShell installation.
         If you want to create your own extension, please refer to the plugin SDK in the <a href="{{ url('/download') }}">downloads section</a>.
     </p>
 </div>

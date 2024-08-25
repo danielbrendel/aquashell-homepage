@@ -44,14 +44,14 @@ class IndexController extends BaseController {
 	}
 
 	/**
-	 * Handles URL: /extensions
+	 * Handles URL: /plugins
 	 * 
 	 * @param Asatru\Controller\ControllerArg $request
 	 * @return Asatru\View\ViewHandler
 	 */
-	public function extensions($request)
+	public function plugins($request)
 	{
-		return view('layout', array(array('content', 'extensions')));
+		return view('layout', array(array('content', 'plugins')));
 	}
 
 	/**
