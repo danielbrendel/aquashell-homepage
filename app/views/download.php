@@ -54,7 +54,7 @@
             <div class="info-list-item">
                 <div class="info-list-header">
                     <div class="info-list-header-title">Notepad++ language definition</div>
-                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/aquashell-scripting/aquashell-scripting.github.io/blob/main/res/dnyScript_npp_highlighting.xml">Download</a></div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/dnyScript-syntax-highlighting/tree/main/npp">Download</a></div>
                 </div>
 
                 <div class="info-list-content">Syntax highlighting definition file for Notepad++.</div>
