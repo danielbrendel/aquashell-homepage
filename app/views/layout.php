@@ -78,7 +78,11 @@
 					<div class="column is-4">
 						<div class="footer-frame">
 							<div class="footer-content">
+								@if (env('APP_CONTACT'))
+								&copy; {{ date('Y') }} by <a href="{{ ((strpos(env('APP_CONTACT'), '@') !== false) ? 'mailto:' : '') }}{{ env('APP_CONTACT') }}">Daniel Brendel</a>
+								@else
 								&copy; {{ date('Y') }} by Daniel Brendel
+								@endif
 							</div>
 						</div>
 					</div>
