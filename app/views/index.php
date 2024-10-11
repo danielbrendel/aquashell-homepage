@@ -56,6 +56,24 @@
 		</div>
 	</div>
 
+	<hr/>
+
+	<div class="showcase-section">
+		<p>As seen in</p>
+
+		@foreach ($showcase as $sc_item)
+		<a href="{{ $sc_item->url }}">
+			<div class="showcase-item">
+				<div class="showcase-item-logo">
+					<img src="{{ $sc_item->logo }}" alt="logo">
+				</div>
+
+				<div class="showcase-item-name">{{ $sc_item->name }}</div>
+			</div>
+		</a>
+		@endforeach
+	</div>
+
 	@if (env('APP_ENABLESPONSORING'))
 		<hr/>
 

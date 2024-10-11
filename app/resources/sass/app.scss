@@ -310,6 +310,59 @@ pre code.hljs {
     padding-right: 10px;
 }
 
+.showcase-section {
+    position: relative;
+}
+
+.showcase-section p {
+    font-size: 2.3em !important;
+    margin-bottom: 59px !important;
+}
+
+.showcase-section a {
+    color: rgb(50, 92, 123);
+}
+
+.showcase-section a:hover {
+    color: rgb(50, 92, 123);
+    text-decoration: none;
+}
+
+.showcase-item {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    @media screen and (max-width: 500px) {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.showcase-item-logo {
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+}
+
+.showcase-item-logo img {
+    width: 64px;
+    height: 64px;
+}
+
+.showcase-item-name {
+    position: relative;
+    display: inline-block;
+    top: -20px;
+    margin-left: 10px;
+    font-size: 2.0em;
+    @media screen and (max-width: 500px) {
+        font-size: 1.5em;
+    }
+}
+
 .sponsoring {
     margin-top: 25px;
 }

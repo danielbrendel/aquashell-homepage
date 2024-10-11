@@ -13,7 +13,8 @@ class IndexController extends BaseController {
 	public function index($request)
 	{
 		return view('layout', array(array('content', 'index')), [
-			'show_header' => true
+			'show_header' => true,
+			'showcase' => config('showcase')
 		]);
 	}
 
