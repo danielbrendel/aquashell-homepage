@@ -59,7 +59,7 @@
 	<hr/>
 
 	<div class="showcase-section">
-		<p>As seen in</p>
+		<p>As seen on</p>
 
 		@foreach ($showcase as $sc_item)
 		<a href="{{ $sc_item->url }}">
