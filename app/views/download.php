@@ -68,6 +68,15 @@
 
                 <div class="info-list-content">Use the core scripting system in your own product.</div>
             </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">Scritch: Twitch Chat Bot</div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/scritch-bot">Download</a></div>
+                </div>
+
+                <div class="info-list-content">A Twitch Chat Bot written in dnyScript for AquaShell</div>
+            </div>
         </div>
     </div>
 </div>
