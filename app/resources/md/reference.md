@@ -219,7 +219,7 @@ events.raise "event name" (list, of, arguments) "result var to store result"; #R
 ### FileIO
 The FileIO plugin allows you to access files on a storage system (e.g. hard disk, USB drive, ...). 
 ```aquashell
-fopen "file name", "shall_append" "result handle"; #Opens the given file for read/write operations and stores the file handle in the result var. You can check if the handle is valid via the constant %FIO_INVALID_HANDLE.
+fopen "file name" "shall_append" "result handle"; #Opens the given file for read/write operations and stores the file handle in the result var. You can check if the handle is valid via the constant %FIO_INVALID_HANDLE.
 
 fisopen "file handle" "result var"; #Indicates if a file has been opened
 
