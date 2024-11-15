@@ -113,12 +113,18 @@
             let elSpinner = document.querySelector(spinner);
             elSpinner.style.display = 'inline-block';
 
+            window.runCodeTimeStart = new Date(); 
+
             window.vue.ajaxRequest('post', window.location.origin + '/code/run/' + runner, { code: code }, function(response) {
                 elSpinner.style.display = 'none';
                 
                 if (response.code == 200) {
                     elLog.value += response.output;
-                    elLog.value += '=== Finished ===';
+
+                    window.runCodeTimeEnd = new Date();
+                    let timeDiff = (window.runCodeTimeEnd.getTime() - window.runCodeTimeStart.getTime()) / 1000;
+
+                    elLog.value += '=== Finished in ' + (timeDiff).toFixed(2) + 's ===';
                 } else {
                     elLog.classList.add('is-exception');
                     elLog.value = response.msg;
