@@ -104,7 +104,7 @@
 
         runCodeAndReturnResponse: function(runner, code, log, spinner) {
             let elLog = document.querySelector(log);
-            elLog.value = '';
+            elLog.value = '=== Starting Request ===\r\n';
 
             if (elLog.classList.contains('is-exception')) {
                 elLog.classList.remove('is-exception');
@@ -117,7 +117,8 @@
                 elSpinner.style.display = 'none';
                 
                 if (response.code == 200) {
-                    elLog.value = response.output;
+                    elLog.value += response.output;
+                    elLog.value += '=== Finished ===';
                 } else {
                     elLog.classList.add('is-exception');
                     elLog.value = response.msg;
