@@ -94,6 +94,21 @@
             window.hljs.highlightBlock(elTarget);
         },
 
+        handleTabs: function(element, target) {
+            let code = element.value;
+
+            let before_tab = code.slice(0, element.selectionStart);
+            let after_tab = code.slice(element.selectionEnd, element.value.length);
+            let cursor_pos = element.selectionEnd + 1;
+
+            element.value = before_tab + "\t" + after_tab;
+            
+            element.selectionStart = cursor_pos;
+            element.selectionEnd = cursor_pos;
+
+            window.vue.updateCodeEditor(element.value, target);
+        },
+
         clearCodeContext: function() {
             document.querySelector('#code-editing').value = '';
             document.querySelector('#code-highlighting-content').innerHTML = '';

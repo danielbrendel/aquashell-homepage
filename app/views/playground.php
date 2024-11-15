@@ -11,7 +11,7 @@
         @endif
 
         <div class="code-editor">
-            <textarea id="code-editing" oninput="window.vue.updateCodeEditor(this.value, '#code-highlighting-content'); window.vue.syncEditorScrolling(this, '#code-highlighting-content');" onkeypress="if (event.keyCode == 13) { event.stopPropagation(); }" spellcheck="false"></textarea>
+            <textarea id="code-editing" oninput="window.vue.updateCodeEditor(this.value, '#code-highlighting-content'); window.vue.syncEditorScrolling(this, '#code-highlighting-content');" onkeydown="if (event.key == 'Tab') { event.preventDefault(); window.vue.handleTabs(this, '#code-highlighting-content'); }" spellcheck="false"></textarea>
 
             <pre id="code-highlighting" aria-hidden="true">
                 <code class="hljs language-aquashell" id="code-highlighting-content"></code>
