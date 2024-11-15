@@ -10,10 +10,20 @@ const app = express();
 
 app.use(express.json());
 
+function remoteAddress(req)
+{
+    const forwardedFor = req.headers['x-forwarded-for'];
+    const clientIp = forwardedFor ? forwardedFor.split(',')[0] : req.connection.remoteAddress;
+
+    return clientIp;
+}
+
 app.post('/code/run', (req, res) => {
+    const remoteIp = remoteAddress(req);
     const { code, auth } = req.body;
     
     if ((process.env.RUNNER_AUTHTOKEN.length > 0) && (process.env.RUNNER_AUTHTOKEN !== auth)) {
+        console.log(`Unauthorized request from ${remoteIp}`);
         return res.status(401).send({ code: 401, msg: 'Unauthorized: Authentication required, but invalid token provided' });
     }
 
@@ -43,6 +53,8 @@ app.post('/code/run', (req, res) => {
 
         unlink(fullPath);
 
+        console.log(`Successful request from ${remoteIp}`);
+
         res.send({ code: 200, output: stdout });
     });
 });
@@ -52,5 +64,5 @@ app.listen(process.env.RUNNER_PORT, () => {
 
     console.log(`Cmdline: ${process.env.RUNNER_CMDLINE}`);
     console.log(`Port: ${process.env.RUNNER_PORT}`);
-    console.log(`Auth: ${process.env.RUNNER_AUTHTOKEN}`);
+    console.log(`Auth: ${process.env.RUNNER_AUTHTOKEN}\r\n`);
 });
