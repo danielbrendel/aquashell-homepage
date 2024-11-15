@@ -11,14 +11,18 @@ const app = express();
 app.use(express.json());
 
 app.post('/code/run', (req, res) => {
-    const { code } = req.body;
+    const { code, auth } = req.body;
+    
+    if ((process.env.RUNNER_AUTHTOKEN.length > 0) && (process.env.RUNNER_AUTHTOKEN !== auth)) {
+        return res.status(401).send({ code: 401, msg: 'Unauthorized: Authentication required, but invalid token provided' });
+    }
 
     if (!code) {
         return res.status(500).send({ code: 500, msg: 'Script code is required' });
     }
 
     const fileName = `${randomBytes(8).toString('hex')}.dnys`;
-    const fullPath = path.join(process.cwd() + '/scripts/', fileName);
+    const fullPath = path.join(process.cwd(), 'scripts', fileName);
     
     fs.writeFileSync(
         fullPath,
@@ -28,8 +32,8 @@ app.post('/code/run', (req, res) => {
             flag: 'a'
         }
     );
-
-    const command = `${process.env.RUNNER_CMDLINE}`.replace('{%SCRIPT_FILE%}', fullPath);
+    
+    const command = `${process.env.RUNNER_CMDLINE}`.replace('{%SCRIPT_FILE%}', fileName);
     
     exec(command, (error, stdout, stderr) => {
         if (error) {
@@ -44,5 +48,9 @@ app.post('/code/run', (req, res) => {
 });
 
 app.listen(process.env.RUNNER_PORT, () => {
-    console.log(`Code runner is listening on http://localhost:${process.env.RUNNER_PORT}`);
+    console.log(`Code runner is listening on http://localhost:${process.env.RUNNER_PORT}\r\n`);
+
+    console.log(`Cmdline: ${process.env.RUNNER_CMDLINE}`);
+    console.log(`Port: ${process.env.RUNNER_PORT}`);
+    console.log(`Auth: ${process.env.RUNNER_AUTHTOKEN}`);
 });

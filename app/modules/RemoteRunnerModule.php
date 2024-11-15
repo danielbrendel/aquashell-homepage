@@ -33,7 +33,8 @@ class RemoteRunnerModule {
             ];
 
             $data = [
-                'code' => $code
+                'code' => $code,
+                'auth' => env('CE_AUTH', '')
             ];
 
             curl_setopt($ch, CURLOPT_URL, env('CE_REMOTE') . '/code/run');
