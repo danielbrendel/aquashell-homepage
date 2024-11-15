@@ -6,6 +6,9 @@
 
  import './../sass/app.scss';
 
+ window.axios = require('axios');
+ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
  import hljs from 'highlight.js';
  import 'highlight.js/scss/github.scss';
 
@@ -34,6 +37,29 @@
             }
         },
 
+        ajaxRequest: function (method, url, data = {}, successfunc = function(data){}, finalfunc = function(){}, config = {}) {
+            let func = window.axios.get;
+            if (method == 'post') {
+                func = window.axios.post;
+            } else if (method == 'patch') {
+                func = window.axios.patch;
+            } else if (method == 'delete') {
+                func = window.axios.delete;
+            }
+
+            func(url, data, config)
+                .then(function(response){
+                    successfunc(response.data);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+                .finally(function(){
+                        finalfunc();
+                    }
+                );
+        },
+
         showDocumentation: function(elem) {
             let elems = ['aquashell', 'scripting', 'reference'];
             elems.forEach(function(e, i) {
@@ -53,6 +79,57 @@
 
             document.getElementById('button-' + elem).style.textDecoration = 'underline';
             document.getElementById('copy-article-link').dataset.link = window.location.origin + '/documentation?tab=' + elem;
+        },
+
+        updateCodeEditor: function(code, target) {
+            let elTarget = document.querySelector(target);
+
+            if (code[code.length - 1] == "\n") {
+                code += " ";
+            }
+
+            delete elTarget.dataset.highlighted;
+            elTarget.innerHTML = code.replace(new RegExp("&", "g"), "&").replace(new RegExp("<", "g"), "<");;
+            
+            window.hljs.highlightBlock(elTarget);
+        },
+
+        clearCodeContext: function() {
+            document.querySelector('#code-editing').value = '';
+            document.querySelector('#code-highlighting-content').innerHTML = '';
+            document.querySelector('#code-response-log').value = '';
+            
+            window.vue.syncEditorScrolling(this, '#code-highlighting-content');
+        },
+
+        runCodeAndReturnResponse: function(code, log, spinner) {
+            let elLog = document.querySelector(log);
+            elLog.value = '';
+
+            if (elLog.classList.contains('is-exception')) {
+                elLog.classList.remove('is-exception');
+            }
+
+            let elSpinner = document.querySelector(spinner);
+            elSpinner.style.display = 'inline-block';
+
+            window.vue.ajaxRequest('post', window.location.origin + '/code/run', { code: code }, function(response) {
+                elSpinner.style.display = 'none';
+                
+                if (response.code == 200) {
+                    elLog.value = response.output;
+                } else {
+                    elLog.classList.add('is-exception');
+                    elLog.value = response.msg;
+                }
+            });
+        },
+
+        syncEditorScrolling: function(source, target) {
+            let elTarget = document.querySelector(target);
+            
+            elTarget.scrollTop = source.scrollTop;
+            elTarget.scrollLeft = source.scrollLeft;
         },
 
         scrollTo: function(target) {

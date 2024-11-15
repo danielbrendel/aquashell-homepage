@@ -94,6 +94,48 @@ class IndexController extends BaseController {
 	}
 
 	/**
+	 * Handles URL: /code/editor
+	 * 
+	 * @param Asatru\Controller\ControllerArg $request
+	 * @return Asatru\View\ViewHandler
+	 */
+	public function code_editor($request)
+	{		
+		return view('layout', array(array('content', 'playground')), [
+		]);
+	}
+
+	/**
+	 * Handles URL: /code/run
+	 * 
+	 * @param Asatru\Controller\ControllerArg $request
+	 * @return Asatru\View\JsonHandler
+	 */
+	public function code_run($request)
+	{		
+		try {
+			if (!env('CE_ENABLE')) {
+				throw new \Exception('Code Editor is not currently activated');
+			}
+
+			$code = $request->params()->query('code', '');
+
+			$output = CodeRunnerModule::runCode($code);
+
+			return json([
+				'code' => 200,
+				'input' => $code,
+				'output' => $output
+			]);
+		} catch (\Exception $e) {
+			return json([
+				'code' => 500,
+				'msg' => $e->getMessage()
+			]);
+		}
+	}
+
+	/**
 	 * Handles URL: /sitemap
 	 * 
 	 * @param Asatru\Controller\ControllerArg $request

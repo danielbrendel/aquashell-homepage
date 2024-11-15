@@ -39,6 +39,12 @@
             </a>
             @endif
 
+            @if (env('CE_ENABLE'))
+            <a class="navbar-item" href="{{ url('/code/editor') }}">
+                Playground
+            </a>
+            @endif
+
             <a class="navbar-item" href="https://github.com/danielbrendel/dnyAquaShell" target="_blank">
                 GitHub
             </a>

@@ -371,6 +371,70 @@ pre code.hljs {
     height: 352px !important;
 }
 
+.code-editor {
+    position: relative;
+}
+
+.code-editor pre {
+    height: 350px;
+}
+
+#code-editing, #code-highlighting-content {
+    position: absolute;
+    width: calc(100% - 32px);
+    height: 95%;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    padding: 10px;
+    border: 0;
+    overflow: auto;
+}
+
+#code-editing, #code-highlighting-content, #code-highlighting-content * {
+    font-size: 15pt;
+    font-family: monospace;
+    line-height: 20pt;
+}
+
+#code-editing {
+    height: 95%;
+    z-index: 1;
+    resize: none;
+    color: transparent;
+    background: transparent;
+    caret-color: rgb(255, 255, 255);
+}
+
+#code-highlighting-content {
+    z-index: 0;
+}
+
+.code-response {
+    position: relative;
+    margin-top: 10px;
+}
+
+.code-response textarea {
+    background: rgb(155, 190, 235);
+    resize: none;
+}
+
+.code-response textarea.is-exception {
+    color: rgb(255, 0, 0);
+}
+
+.code-actions {
+    position: relative;
+    margin-top: 10px;
+}
+
+.code-actions i {
+    display: none;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
 .footer {
     width: 100%;
     color: rgb(230, 230, 230);

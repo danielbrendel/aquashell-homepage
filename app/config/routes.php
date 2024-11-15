@@ -23,6 +23,8 @@ return [
     array('/plugins', 'GET', 'index@plugins'),
     array('/documentation', 'GET', 'index@documentation'),
     array('/tutorials', 'GET', 'index@tutorials'),
+    array('/code/editor', 'GET', 'index@code_editor'),
+    array('/code/run', 'POST', 'index@code_run'),
     array('/sitemap', 'GET', 'index@sitemap'),
     array('$404', 'ANY', 'error404@index')
 ];
