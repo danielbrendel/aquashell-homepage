@@ -17,7 +17,7 @@
         </div>
 
         <div class="code-actions">
-            <span><a class="button is-link" href="javascript:void(0);" onclick="window.vue.runCodeAndReturnResponse(document.querySelector('#code-editing').value, '#code-response-log', '#code-actions-spinner');">Run Code</a></span>
+            <span><a class="button is-link" href="javascript:void(0);" onclick="window.vue.runCodeAndReturnResponse('{{ $code_runner }}', document.querySelector('#code-editing').value, '#code-response-log', '#code-actions-spinner');">Run Code</a></span>
             <span><a class="button" href="javascript:void(0);" onclick="window.vue.clearCodeContext();">Clear</a></span>
             <span><i class="fas fa-spinner fa-spin" id="code-actions-spinner"></i></span>
         </div>

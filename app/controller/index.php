@@ -102,6 +102,7 @@ class IndexController extends BaseController {
 	public function code_editor($request)
 	{		
 		return view('layout', array(array('content', 'playground')), [
+			'code_runner' => env('CE_RUNNER', 'local')
 		]);
 	}
 
@@ -121,6 +122,36 @@ class IndexController extends BaseController {
 			$code = $request->params()->query('code', '');
 
 			$output = CodeRunnerModule::runCode($code);
+
+			return json([
+				'code' => 200,
+				'input' => $code,
+				'output' => $output
+			]);
+		} catch (\Exception $e) {
+			return json([
+				'code' => 500,
+				'msg' => $e->getMessage()
+			]);
+		}
+	}
+
+	/**
+	 * Handles URL: /code/run/remote
+	 * 
+	 * @param Asatru\Controller\ControllerArg $request
+	 * @return Asatru\View\JsonHandler
+	 */
+	public function code_run_remote($request)
+	{		
+		try {
+			if (!env('CE_ENABLE')) {
+				throw new \Exception('Code Editor is not currently activated');
+			}
+
+			$code = $request->params()->query('code', '');
+
+			$output = RemoteRunnerModule::runCode($code);
 
 			return json([
 				'code' => 200,

@@ -24,7 +24,8 @@ return [
     array('/documentation', 'GET', 'index@documentation'),
     array('/tutorials', 'GET', 'index@tutorials'),
     array('/code/editor', 'GET', 'index@code_editor'),
-    array('/code/run', 'POST', 'index@code_run'),
+    array('/code/run/local', 'POST', 'index@code_run'),
+    array('/code/run/remote', 'POST', 'index@code_run_remote'),
     array('/sitemap', 'GET', 'index@sitemap'),
     array('$404', 'ANY', 'error404@index')
 ];

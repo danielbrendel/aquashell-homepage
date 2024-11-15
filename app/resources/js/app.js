@@ -102,7 +102,7 @@
             window.vue.syncEditorScrolling(this, '#code-highlighting-content');
         },
 
-        runCodeAndReturnResponse: function(code, log, spinner) {
+        runCodeAndReturnResponse: function(runner, code, log, spinner) {
             let elLog = document.querySelector(log);
             elLog.value = '';
 
@@ -113,7 +113,7 @@
             let elSpinner = document.querySelector(spinner);
             elSpinner.style.display = 'inline-block';
 
-            window.vue.ajaxRequest('post', window.location.origin + '/code/run', { code: code }, function(response) {
+            window.vue.ajaxRequest('post', window.location.origin + '/code/run/' + runner, { code: code }, function(response) {
                 elSpinner.style.display = 'none';
                 
                 if (response.code == 200) {
