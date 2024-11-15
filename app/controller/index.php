@@ -107,12 +107,12 @@ class IndexController extends BaseController {
 	}
 
 	/**
-	 * Handles URL: /code/run
+	 * Handles URL: /code/run/local
 	 * 
 	 * @param Asatru\Controller\ControllerArg $request
 	 * @return Asatru\View\JsonHandler
 	 */
-	public function code_run($request)
+	public function code_run_local($request)
 	{		
 		try {
 			if (!env('CE_ENABLE')) {
