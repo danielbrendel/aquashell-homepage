@@ -23,9 +23,9 @@ return [
     array('/plugins', 'GET', 'index@plugins'),
     array('/documentation', 'GET', 'index@documentation'),
     array('/tutorials', 'GET', 'index@tutorials'),
-    array('/code/editor', 'GET', 'index@code_editor'),
-    array('/code/run/local', 'POST', 'index@code_run_local'),
-    array('/code/run/remote', 'POST', 'index@code_run_remote'),
+    array('/code/editor', 'GET', 'editor@code_editor'),
+    array('/code/run/local', 'POST', 'editor@code_run_local'),
+    array('/code/run/remote', 'POST', 'editor@code_run_remote'),
     array('/sitemap', 'GET', 'index@sitemap'),
     array('$404', 'ANY', 'error404@index')
 ];
