@@ -150,8 +150,9 @@ class IndexController extends BaseController {
 			}
 
 			$code = $request->params()->query('code', '');
+			$auth = $request->params()->query('auth', '');
 
-			$response = RemoteRunnerModule::runCode($code);
+			$response = RemoteRunnerModule::runCode($code, $auth);
 
 			if ((!isset($response->code)) || ($response->code != 200)) {
                 throw new \Exception('[' . strval($response->code) . '] ' . $response->msg);

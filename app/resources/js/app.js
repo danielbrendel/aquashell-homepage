@@ -102,7 +102,7 @@
             window.vue.syncEditorScrolling(this, '#code-highlighting-content');
         },
 
-        runCodeAndReturnResponse: function(runner, code, log, spinner) {
+        runCodeAndReturnResponse: function(runner, auth, code, log, spinner) {
             let elLog = document.querySelector(log);
             elLog.value = '=== Starting Request ===\r\n';
 
@@ -113,9 +113,11 @@
             let elSpinner = document.querySelector(spinner);
             elSpinner.style.display = 'inline-block';
 
+            let elAuth = document.querySelector(auth);
+
             window.runCodeTimeStart = new Date(); 
 
-            window.vue.ajaxRequest('post', window.location.origin + '/code/run/' + runner, { code: code }, function(response) {
+            window.vue.ajaxRequest('post', window.location.origin + '/code/run/' + runner, { code: code, auth: ((elAuth) ? elAuth.value : '') }, function(response) {
                 elSpinner.style.display = 'none';
                 
                 if (response.code == 200) {

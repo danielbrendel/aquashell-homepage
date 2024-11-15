@@ -39,7 +39,7 @@
             </a>
             @endif
 
-            @if (env('CE_ENABLE'))
+            @if ((env('CE_ENABLE')) && (!env('CE_AUTH')))
             <a class="navbar-item" href="{{ url('/code/editor') }}">
                 Playground
             </a>

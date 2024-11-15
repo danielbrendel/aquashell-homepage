@@ -371,6 +371,15 @@ pre code.hljs {
     height: 352px !important;
 }
 
+.code-authentication {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.code-authentication input {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .code-editor {
     position: relative;
 }

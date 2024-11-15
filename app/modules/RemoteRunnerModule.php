@@ -6,13 +6,14 @@
 class RemoteRunnerModule {
      /**
      * @param $code
+     * @param $auth
      * @return string
      * @throws \Exception
      */
-    public static function runCode($code)
+    public static function runCode($code, $auth = '')
     {
         try {
-            return static::request($code);
+            return static::request($code, $auth);
         } catch (\Exception $e) {
             throw $e;
         }
@@ -20,10 +21,11 @@ class RemoteRunnerModule {
 
     /**
      * @param $code
+     * @param $auth
      * @return mixed
      * @throws \Exception
      */
-    public static function request($code)
+    public static function request($code, $auth = '')
     {
         try {
             $ch = curl_init();
@@ -34,9 +36,9 @@ class RemoteRunnerModule {
 
             $data = [
                 'code' => $code,
-                'auth' => env('CE_AUTH', '')
+                'auth' => $auth
             ];
-
+            
             curl_setopt($ch, CURLOPT_URL, env('CE_REMOTE') . '/code/run');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
