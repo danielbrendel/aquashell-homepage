@@ -20,7 +20,7 @@ class RemoteRunnerModule {
 
     /**
      * @param $code
-     * @return string
+     * @return mixed
      * @throws \Exception
      */
     public static function request($code)
@@ -53,12 +53,7 @@ class RemoteRunnerModule {
 
             curl_close($ch);
 
-            $data = json_decode($response);
-            if ((!isset($data->code)) || ($data->code != 200)) {
-                throw new \Exception('Request failed: ' . print_r($response, true));
-            }
-
-            return $data->output;
+            return json_decode($response);
         } catch (\Exception $e) {
             throw $e;
         }

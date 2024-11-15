@@ -151,12 +151,16 @@ class IndexController extends BaseController {
 
 			$code = $request->params()->query('code', '');
 
-			$output = RemoteRunnerModule::runCode($code);
+			$response = RemoteRunnerModule::runCode($code);
+
+			if ((!isset($response->code)) || ($response->code != 200)) {
+                throw new \Exception('[' . strval($response->code) . '] ' . $response->msg);
+            }
 
 			return json([
 				'code' => 200,
 				'input' => $code,
-				'output' => $output
+				'output' => $response->output
 			]);
 		} catch (\Exception $e) {
 			return json([
