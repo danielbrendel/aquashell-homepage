@@ -49,7 +49,7 @@
 
 		<div class="feature-cards-block feature-cards-block-fix">
 			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Plugin interface</div>
-			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Many pre-configured plugins</div>
+			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Many standard plugins</div>
 			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Internal/external Cmds</div>
 			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;VS Code & Npp integration</div>
 			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Maintained since 2017</div>

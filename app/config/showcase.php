@@ -11,5 +11,11 @@ return [
         'url' => 'https://www.libhunt.com/r/dnyAquaShell',
         'logo' => asset('img/libhunt.png'),
         'name' => 'LibHunt'
+    ],
+
+    [
+        'url' => 'https://www.producthunt.com/products/aquashell',
+        'logo' => asset('img/producthunt.png'),
+        'name' => 'Product Hunt'
     ]
 ];
