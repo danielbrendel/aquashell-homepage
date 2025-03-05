@@ -30,11 +30,11 @@
 
             <div class="info-list-item">
                 <div class="info-list-header">
-                    <div class="info-list-header-title">DateTime</div>
-                    <div class="info-list-header-button"><span class="button is-link is-not-clickable">Language</span></div>
+                    <div class="info-list-header-title">Ini</div>
+                    <div class="info-list-header-button"><span class="button is-warning is-not-clickable">System</span></div>
                 </div>
 
-                <div class="info-list-content">A datetime utility to format date and time strings.</div>
+                <div class="info-list-content">Provides commands to access INI configuration files.</div>
             </div>
 
             <div class="info-list-item">
@@ -116,6 +116,15 @@
                 </div>
 
                 <div class="info-list-content">A utility component to do string manipulation.</div>
+            </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">DirectX</div>
+                    <div class="info-list-header-button"><span class="button is-primary is-not-clickable">Gaming</span></div>
+                </div>
+
+                <div class="info-list-content">Package consisting of a DirectX window, renderer and sound plugin.</div>
             </div>
         </div>
     </div>
