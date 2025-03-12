@@ -234,7 +234,3 @@ void dnyAS_PluginUnload(void)
 ```
 
 Please refer to the demo plugin sourcecode in order to view a full documented example.
-
-<p><hr/></p>
-
-[Go back](index.md)
