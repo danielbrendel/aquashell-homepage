@@ -86,6 +86,15 @@
 
                 <div class="info-list-content">A demo asteroids game written in dnyScript for AquaShell</div>
             </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">AquaIRC Client: IRC chat client</div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/aquairc-client">Download</a></div>
+                </div>
+
+                <div class="info-list-content">A sample IRC chat client written in dnyScript for AquaShell</div>
+            </div>
         </div>
     </div>
 </div>
