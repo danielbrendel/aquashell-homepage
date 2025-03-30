@@ -21,7 +21,7 @@
     </p>
 
     <div class="other-downloads">
-        <h3>Other downloads</h3>
+        <h3>Scripting downloads</h3>
 
         <div class="info-list">
             <div class="info-list-item">
@@ -68,7 +68,11 @@
 
                 <div class="info-list-content">Use the core scripting system in your own product.</div>
             </div>
+        </div>
 
+        <h3>Scripted Apps downloads</h3>
+
+        <div class="info-list">
             <div class="info-list-item">
                 <div class="info-list-header">
                     <div class="info-list-header-title">Scritch: Twitch Chat Bot</div>
