@@ -80,6 +80,15 @@
 
             <div class="info-list-item">
                 <div class="info-list-header">
+                    <div class="info-list-header-title">AquaHotS: Chat Hotkey Manager</div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/aquashell-hots">Download</a></div>
+                </div>
+
+                <div class="info-list-content">A Hotkey Chat Message Manager for Heroes of the Storm</div>
+            </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
                     <div class="info-list-header-title">AquaSpace: A demo asteroids game</div>
                     <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/aquaspace-game">Download</a></div>
                 </div>
