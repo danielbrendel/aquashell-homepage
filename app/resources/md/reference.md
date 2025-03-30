@@ -314,6 +314,8 @@ wnd_setformres "form handle" w h; #Sets the new form resolution
 
 wnd_setformtitle "form handle" "new title"; #Updates the form title with the given text
 
+wnd_setformicon "form handle" "icon file"; #Sets the icon file of the form
+
 wnd_setcomppos "form handle" "component type" "component name" x y; #Sets the new position of a form component
 
 wnd_setcompres "form handle" "component type" "component name" w h; #Sets the new resolution of a form component
