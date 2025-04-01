@@ -76,7 +76,7 @@
             <div class="info-list-item">
                 <div class="info-list-header">
                     <div class="info-list-header-title">Scritch: Twitch Chat Bot</div>
-                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/scritch-bot">Download</a></div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/aquascritch-bot">Download</a></div>
                 </div>
 
                 <div class="info-list-content">A Twitch Chat Bot written in dnyScript for AquaShell</div>
