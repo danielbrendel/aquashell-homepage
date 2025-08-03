@@ -279,7 +279,7 @@ freadline "file handle" "result var"; #Reads the current line of the file and st
 
 fclose "file handle"; #Closes the file
 
-dcreate "folder name" "result var"; #Attempts to create a folder stores the result var
+dcreate "folder name" "result var"; #Attempts to create a folder and stores the result var
 
 dremove "folder name" "result var"; #Attempts to delete the specified folder and stores the result var
 

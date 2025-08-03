@@ -107,7 +107,7 @@
 					return {
 						case_insensitive: false,
 						keywords: {
-							keyword: 'global const set if function elseif else for while local result unset call class method member construct destruct require exec run cwd gwd getscriptpath getscriptname textview random sleep bitop gettickcount timestamp fmtdatetime getsystemerror setsystemerror listlibs print sys pause exit quit',
+							keyword: 'global const set if function elseif else for while local result unset call class method member construct destruct require exec run cwd gwd getscriptpath getscriptname textview random sleep bitop gettickcount timestamp fmtdatetime getsystemerror setsystemerror threadfunc hideconsole listlibs print sys pause exit quit',
 							literal: 'bool int float string void true false',
 						},
 						contains: [
