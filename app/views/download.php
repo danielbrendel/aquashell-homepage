@@ -108,6 +108,15 @@
 
                 <div class="info-list-content">A sample IRC chat client written in dnyScript for AquaShell</div>
             </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">AquaBoard: Half-Life Classic Soundboard</div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/aquaboard-hlsb">Download</a></div>
+                </div>
+
+                <div class="info-list-content">A Half-Life Classic soundboard that uses DirectX for rendering and sound management</div>
+            </div>
         </div>
     </div>
 </div>
