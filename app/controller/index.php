@@ -38,7 +38,7 @@ class IndexController extends BaseController {
 	 */
 	public function download($request)
 	{
-		return view('layout', array(array('content', 'download')));
+		return parent::view(['content', 'download']);
 	}
 
 	/**
@@ -51,7 +51,7 @@ class IndexController extends BaseController {
 	{
 		$snippets = SnippetsModel::getAll();
 
-		return view('layout', array(array('content', 'examples')), [
+		return parent::view(['content', 'examples'], [
 			'snippets' => $snippets
 		]);
 	}
@@ -64,7 +64,7 @@ class IndexController extends BaseController {
 	 */
 	public function plugins($request)
 	{
-		return view('layout', array(array('content', 'plugins')));
+		return parent::view(['content', 'plugins']);
 	}
 
 	/**
@@ -82,7 +82,7 @@ class IndexController extends BaseController {
 
 		$tab = $request->params()->query('tab', 'aquashell');
 
-		return view('layout', [['content', 'documentation']], [
+		return parent::view(['content', 'documentation'], [
 			'shell_doc' => $shell_doc,
 			'scripting_doc' => $scripting_doc,
 			'reference_doc' => $reference_doc,
@@ -100,7 +100,7 @@ class IndexController extends BaseController {
 	{
 		$tutorials = TutorialsModel::getAll();
 		
-		return view('layout', array(array('content', 'tutorials')), [
+		return parent::view(['content', 'tutorials'], [
 			'tutorials' => $tutorials
 		]);
 	}
