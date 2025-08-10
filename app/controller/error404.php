@@ -4,6 +4,18 @@
  * Error 404 controller
  */
 class Error404Controller extends BaseController {
+	const INDEX_LAYOUT = 'layout';
+
+	/**
+	 * Perform base initialization
+	 * 
+	 * @return void
+	 */
+	public function __construct()
+	{
+		parent::__construct(self::INDEX_LAYOUT);
+	}
+
 	/**
 	 * Handles special case: $404
 	 * 
@@ -12,7 +24,7 @@ class Error404Controller extends BaseController {
 	 */
 	public function index($request)
 	{
-		return view('layout', array(array('content', 'error/404')), [
+		return parent::view(['content', 'error/404'], [
 			'show_header' => false
 		]);
 	}
