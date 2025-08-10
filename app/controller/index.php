@@ -4,6 +4,18 @@
  * Index controller
  */
 class IndexController extends BaseController {
+	const INDEX_LAYOUT = 'layout';
+
+	/**
+	 * Perform base initialization
+	 * 
+	 * @return void
+	 */
+	public function __construct()
+	{
+		parent::__construct(self::INDEX_LAYOUT);
+	}
+
 	/**
 	 * Handles URL: /
 	 * 
@@ -12,7 +24,7 @@ class IndexController extends BaseController {
 	 */
 	public function index($request)
 	{
-		return view('layout', array(array('content', 'index')), [
+		return parent::view(['content', 'index'], [
 			'show_header' => true,
 			'showcase' => config('showcase')
 		]);
