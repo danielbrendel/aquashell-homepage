@@ -121,7 +121,7 @@
             <div class="info-list-item">
                 <div class="info-list-header">
                     <div class="info-list-header-title">DirectX</div>
-                    <div class="info-list-header-button"><span class="button is-primary is-not-clickable">Gaming</span></div>
+                    <div class="info-list-header-button"><span class="button is-primary is-not-clickable">Multimedia</span></div>
                 </div>
 
                 <div class="info-list-content">Package consisting of a DirectX window, renderer and sound plugin.</div>
