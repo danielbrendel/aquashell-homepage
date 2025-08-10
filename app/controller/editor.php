@@ -4,15 +4,21 @@
  * Editor controller
  */
 class EditorController extends BaseController {
-    /**
-     * @return void
-     */
-    public function __construct()
-    {
-        if (!env('CE_ENABLE')) {
+	const INDEX_LAYOUT = 'layout';
+
+	/**
+	 * Perform base initialization
+	 * 
+	 * @return void
+	 */
+	public function __construct()
+	{
+		parent::__construct(self::INDEX_LAYOUT);
+
+		if (!env('CE_ENABLE')) {
             throw new \Exception('Access forbidden');
         }
-    }
+	}
 
     /**
 	 * Handles URL: /code/editor
@@ -22,7 +28,7 @@ class EditorController extends BaseController {
 	 */
 	public function code_editor($request)
 	{		
-		return view('layout', array(array('content', 'playground')), [
+		return parent::view(['content', 'playground'], [
 			'code_runner' => env('CE_RUNNER', 'local')
 		]);
 	}
