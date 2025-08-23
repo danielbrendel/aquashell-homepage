@@ -111,11 +111,11 @@
 
             <div class="info-list-item">
                 <div class="info-list-header">
-                    <div class="info-list-header-title">AquaBoard: Half-Life Classic Soundboard</div>
-                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/aquaboard-hlsb">Download</a></div>
+                    <div class="info-list-header-title">AquaBoard: Counter-Strike Retroboard</div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/aquaboard-rbcs">Download</a></div>
                 </div>
 
-                <div class="info-list-content">A Half-Life Classic soundboard that uses DirectX for rendering and sound management</div>
+                <div class="info-list-content">A Counter-Strike 1.6 Retroboard that uses DirectX for rendering and sound management</div>
             </div>
         </div>
     </div>
