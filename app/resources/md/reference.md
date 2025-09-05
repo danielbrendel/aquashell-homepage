@@ -156,7 +156,7 @@ array "array name" "data type" "initial size as positive number" (list of initia
 
 array_item_get "name of array" "positive index of array item" "target var"; #Stores the array item expression to the given variable of same type
 
-array_item_get "source variable" "array name" "positive index of array item to save to"; #Stores the expression of the variable to the specified array item
+array_item_set "source variable" "array name" "positive index of array item to save to"; #Stores the expression of the variable to the specified array item
 
 array_item_copy "source array name" "positive index" "target array name" "positive index"; #Copies one array value to another array item
 
@@ -265,7 +265,7 @@ event.release "event name"; #Removes the event and associated data
 ### FileIO
 The FileIO plugin allows you to access files on a storage system (e.g. hard disk, USB drive, ...). 
 ```aquashell
-fopen "file name", "shall_append" "result handle"; #Opens the given file for read/write operations and stores the file handle in the result var. You can check if the handle is valid via the constant %FIO_INVALID_HANDLE.
+fopen "file name" "shall_append" "result handle"; #Opens the given file for read/write operations and stores the file handle in the result var. You can check if the handle is valid via the constant %FIO_INVALID_HANDLE.
 
 fisopen "file handle" "result var"; #Indicates if a file has been opened
 
