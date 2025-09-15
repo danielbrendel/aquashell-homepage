@@ -20,6 +20,12 @@
         </ul>
     </p>
 
+    <p>
+        <h3>Installation via winget</h3>
+
+        <pre><code class="hljs language-bash">winget install danielbrendel.AquaShell</code></pre>
+    </p>
+
     <div class="other-downloads">
         <h3>Scripting downloads</h3>
 
