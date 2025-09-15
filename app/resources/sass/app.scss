@@ -399,16 +399,26 @@ pre code.hljs {
     border-bottom-left-radius: 5px;
 }
 
-.snippets-category-name {
+.snippets-category-info {
     position: relative;
     display: inline-block;
     margin-left: 10px;
+    top: -3px;
+    padding: 20px;
+}
+
+.snippets-category-info-name {
+    position: relative;
     font-size: 1.5em;
     @media screen and (max-width: 400px) {
         font-size: 1.2em;
     }
-    top: -15px;
-    padding: 20px;
+}
+
+.snippets-category-info-count {
+    position: relative;
+    font-size: 1.0em;
+    font-style: italic;
 }
 
 .tutorials iframe {

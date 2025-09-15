@@ -9,7 +9,11 @@
                 <a href="{{ url('/snippets/category/' . strtolower($category->get('name'))) }}">
                     <div class="snippets-category">
                         <div class="snippets-category-icon"><i class="{{ $category->get('icon') }} fa-4x"></i></div>
-                        <div class="snippets-category-name">{{ $category->get('name') }}</div>
+
+                        <div class="snippets-category-info">
+                            <div class="snippets-category-info-name">{{ $category->get('name') }}</div>
+                            <div class="snippets-category-info-count">{{ SnippetsModel::getCategoryCount($category->get('id')) }} snippets</div>
+                        </div>
                     </div>
                 </a>
             @endforeach

@@ -32,6 +32,20 @@ class SnippetsModel extends \Asatru\Database\Model {
     }
 
     /**
+     * @param $id
+     * @return int
+     * @throws \Exception
+     */
+    public static function getCategoryCount($id)
+    {
+        try {
+            return static::raw('SELECT COUNT(*) AS count FROM `@THIS` where category = ?', [$id])->first()?->get('count');
+        } catch (\Exception $e) {
+            throw $e;
+        }
+    }
+
+    /**
      * @param $code
      * @return string
      * @throws \Exception
