@@ -21,8 +21,8 @@
                 Download
             </a>
 
-            <a class="navbar-item" href="{{ url('/examples') }}">
-                Examples
+            <a class="navbar-item" href="{{ url('/snippets') }}">
+                Snippets
             </a>
 
             <a class="navbar-item" href="{{ url('/plugins') }}">

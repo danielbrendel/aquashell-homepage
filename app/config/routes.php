@@ -19,7 +19,6 @@ return [
     array('/', 'GET', 'index@index'),
     array('/index', 'GET', 'index@index'),
     array('/download', 'GET', 'index@download'),
-    array('/examples', 'GET', 'index@examples'),
     array('/snippets', 'GET', 'snippets@index'),
     array('/snippets/category/{name}', 'GET', 'snippets@listing'),
     array('/plugins', 'GET', 'index@plugins'),

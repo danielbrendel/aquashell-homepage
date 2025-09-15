@@ -42,21 +42,6 @@ class IndexController extends BaseController {
 	}
 
 	/**
-	 * Handles URL: /examples
-	 * 
-	 * @param Asatru\Controller\ControllerArg $request
-	 * @return Asatru\View\ViewHandler
-	 */
-	public function examples($request)
-	{
-		$snippets = SnippetsModel::getAll();
-
-		return parent::view(['content', 'examples'], [
-			'snippets' => $snippets
-		]);
-	}
-
-	/**
 	 * Handles URL: /plugins
 	 * 
 	 * @param Asatru\Controller\ControllerArg $request
