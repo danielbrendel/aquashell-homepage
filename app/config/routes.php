@@ -20,6 +20,8 @@ return [
     array('/index', 'GET', 'index@index'),
     array('/download', 'GET', 'index@download'),
     array('/examples', 'GET', 'index@examples'),
+    array('/snippets', 'GET', 'snippets@index'),
+    array('/snippets/category/{name}', 'GET', 'snippets@listing'),
     array('/plugins', 'GET', 'index@plugins'),
     array('/documentation', 'GET', 'index@documentation'),
     array('/tutorials', 'GET', 'index@tutorials'),

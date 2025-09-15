@@ -367,6 +367,50 @@ pre code.hljs {
     margin-top: 25px;
 }
 
+.snippets-categories {
+    position: relative;
+}
+
+.snippets-category {
+    position: relative;
+    display: inline-block;
+    min-width: 340px;
+    @media screen and (max-width: 400px) {
+        min-width: 320px;
+    }
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    background-color: rgb(79, 150, 190);
+    color: rgb(250, 250, 250);
+    border-radius: 5px;
+}
+
+.snippets-category:hover {
+    background-color: rgb(101, 165, 202);
+}
+
+.snippets-category-icon {
+    position: relative;
+    display: inline-block;
+    background-color: rgb(55, 111, 145);
+    padding: 20px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.snippets-category-name {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 1.5em;
+    @media screen and (max-width: 400px) {
+        font-size: 1.2em;
+    }
+    top: -15px;
+    padding: 20px;
+}
+
 .tutorials iframe {
     height: 352px !important;
 }

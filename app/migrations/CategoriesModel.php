@@ -3,7 +3,7 @@
 /**
  * This class specifies a migration
  */
-class SnippetsModel_Migration {
+class CategoriesModel_Migration {
     private $database = null;
     private $connection = null;
 
@@ -25,12 +25,13 @@ class SnippetsModel_Migration {
      */
     public function up()
     {
-        $this->database = new Asatru\Database\Migration('SnippetsModel', $this->connection);
+        $this->database = new Asatru\Database\Migration('CategoriesModel', $this->connection);
         $this->database->drop();
         $this->database->add('id INT NOT NULL AUTO_INCREMENT PRIMARY KEY');
-        $this->database->add('category INT NOT NULL');
-        $this->database->add('description VARCHAR(512) NOT NULL');
-        $this->database->add('snippet TEXT NOT NULL');
+        $this->database->add('name VARCHAR(512) NOT NULL');
+        $this->database->add('description VARCHAR(512) NULL');
+        $this->database->add('icon VARCHAR(512) NOT NULL');
+        $this->database->add('updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP');
         $this->database->add('created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP');
         $this->database->create();
     }

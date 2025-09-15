@@ -3,7 +3,7 @@
 /**
  * This class extends the base model class and represents your associated table
  */ 
-class SnippetsModel extends \Asatru\Database\Model {
+class CategoriesModel extends \Asatru\Database\Model {
     /**
      * @return mixed
      * @throws \Exception
@@ -18,28 +18,14 @@ class SnippetsModel extends \Asatru\Database\Model {
     }
 
     /**
-     * @param $id
+     * @param $name
      * @return mixed
      * @throws \Exception
      */
-    public static function getFromCategory($id)
+    public static function getCategoryByName($name)
     {
         try {
-            return static::raw('SELECT * FROM `@THIS` where category = ?', [$id]);
-        } catch (\Exception $e) {
-            throw $e;
-        }
-    }
-
-    /**
-     * @param $code
-     * @return string
-     * @throws \Exception
-     */
-    public static function fixTab($code)
-    {
-        try {
-            return str_replace("\t", '    ', $code);
+            return static::raw('SELECT * FROM `@THIS` WHERE LOWER(name) = ?', [strtolower($name)])->first();
         } catch (\Exception $e) {
             throw $e;
         }
