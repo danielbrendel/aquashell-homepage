@@ -1,4 +1,4 @@
-<nav class="navbar is-link is-fixed-top" role="navigation" aria-label="main navigation">
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item navbar-item-brand is-font-title" href="{{ url('/') }}">
             <img src="{{ asset('img/logo.png') }}" alt="Logo"/>&nbsp;AquaShell
@@ -13,39 +13,39 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-end">
-            <a class="navbar-item" href="{{ url('/') }}">
+            <a class="navbar-item navbar-item-padding" href="{{ url('/') }}">
                 Home
             </a>
 
-            <a class="navbar-item" href="{{ url('/download') }}">
+            <a class="navbar-item navbar-item-padding" href="{{ url('/download') }}">
                 Download
             </a>
 
-            <a class="navbar-item" href="{{ url('/snippets') }}">
+            <a class="navbar-item navbar-item-padding" href="{{ url('/snippets') }}">
                 Snippets
             </a>
 
-            <a class="navbar-item" href="{{ url('/plugins') }}">
+            <a class="navbar-item navbar-item-padding" href="{{ url('/plugins') }}">
                 Plugins
             </a>
 
-            <a class="navbar-item" href="{{ url('/documentation') }}">
+            <a class="navbar-item navbar-item-padding" href="{{ url('/documentation') }}">
                 Documentation
             </a>
 
             @if (TutorialsModel::count()->get() > 0)
-            <a class="navbar-item" href="{{ url('/tutorials') }}">
+            <a class="navbar-item navbar-item-padding" href="{{ url('/tutorials') }}">
                 Tutorials
             </a>
             @endif
 
             @if ((env('CE_ENABLE')) && (!env('CE_AUTH')))
-            <a class="navbar-item" href="{{ url('/code/editor') }}">
+            <a class="navbar-item navbar-item-padding" href="{{ url('/code/editor') }}">
                 Playground
             </a>
             @endif
 
-            <a class="navbar-item" href="https://github.com/danielbrendel/dnyAquaShell" target="_blank">
+            <a class="navbar-item navbar-item-padding" href="https://github.com/danielbrendel/dnyAquaShell" target="_blank">
                 GitHub
             </a>
         </div>

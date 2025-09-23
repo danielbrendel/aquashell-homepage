@@ -8,7 +8,7 @@ html, body {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    background-color: rgb(172, 215, 245);
+    background-color: rgb(50, 50, 50);
     overflow-x: hidden !important;
 }
 
@@ -22,47 +22,109 @@ body {
 }
 
 a {
-    color:rgb(34, 95, 145);
+    color:rgb(123, 169, 220);
 }
 
 a:hover {
-    color:rgb(34, 95, 145);
+    color:rgb(123, 169, 220);
+}
+
+strong {
+    color: rgb(230, 230, 230);
+}
+
+.navbar {
+    background-color: transparent;
+    transition: .3s ease-in-out;
+    @media screen and (min-width: 1087px) {
+        padding: 15px;
+    }
+    @media screen and (max-width: 1087px) {
+        padding: 5px;
+    }
+}
+
+.navbar-no-transition {
+    transition: unset;
+}
+
+.navbar-item-brand img {
+    border-radius: 50%;
+}
+
+.navbar-item-brand.is-font-title {
+    @media screen and (min-width: 1087px) {
+        font-size: 1.4em;
+    }
+    @media screen and (max-width: 1087px) {
+        font-size: 1.2em;
+    }
 }
 
 .navbar-burger {
-    top: 3px;
+    @media screen and (max-width: 1087px) {
+        top: 4px;
+    }
 }
 
-.navbar-item img {
-    max-height: unset !important;
-}
-
-.navbar-brand img {
-    width: 42px;
-    height: 42px;
+.navbar-background-color {
+    background-color: #3273dc !important;
 }
 
 .navbar-menu {
-    background-color: #3273dc;
+    @media screen and (max-width: 1089px) {
+        background-color: #3273dc !important;
+    }
 }
 
-.navbar-item {
-    color: rgb(255, 255, 255) !important;
+a.navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {
+    background-color: rgba(255, 255, 255, 0.0) !important;
+    color: rgb(250, 250, 250) !important;
 }
 
-.navbar-item:hover {
-    @media screen and (max-width: 1098px) {
-        background-color: unset !important;
+.navbar-item, .navbar-burger, .navbar-link {
+    color: rgb(230, 230, 230);
+}
+
+.navbar-item-padding {
+    @media screen and (min-width: 1087px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.navbar-dropdown {
+    background-color: rgb(50, 50, 50);
+}
+
+.navbar-item.has-dropdown:hover .navbar-link, .navbar-item.has-dropdown.is-active .navbar-link {
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+@media screen and (max-width: 1087px) {
+    .navbar-menu {
+        background-color: rgb(50, 50, 50);
+    }
+}
+
+a.navbar-burger:hover {
+    color: rgb(200, 200, 200);
+}
+
+.navbar-start {
+    @media screen and (min-width: 1088px) {
+        flex-grow: 1;
+        justify-content: center;
     }
 }
 
 .header {
     position: relative;
     width: 100%;
-    height: 453px;
-    margin-top: 52px;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    mask-image: linear-gradient(to bottom, rgb(30, 30, 30) 90%, rgba(30, 30, 30, 0) 100%);
 }
 
 .header-overlay {
@@ -81,14 +143,16 @@ a:hover {
 }
 
 .header-content h1 {
-    color: rgb(230, 230, 230);
-    font-size: 2.5em;
-}
-
-.header-content h2 {
-    color: rgb(220, 220, 220);
-    font-size: 1.5em;
-    margin-bottom: 20px;
+    color: #fff5a4;
+    font-size: 10.0em;
+    @media screen and (max-width: 768px) {
+        font-size: 5.0em;
+    }
+    @media screen and (max-width: 432px) {
+        font-size: 4.0em;
+    }
+    text-shadow: 0 0 5px #3ebbd5, 0 0 10px #3ebbd5, 0 0 20px #3ebbd5, 0 0 40px #3ebbd5, 0 0 80px #3ebbd5;
+    margin-bottom: 35px;
 }
 
 .header-buttons div {
@@ -106,7 +170,7 @@ a:hover {
 }
 
 .header-badges {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 }
 
 .header-badges img {
@@ -119,18 +183,18 @@ a:hover {
     top: -20px;
     text-align: center;
     padding: 20px;
-    color: rgb(50, 50, 50);
+    color: rgb(200, 200, 200);
 }
 
 .content h2 {
     font-size: 2.5em;
-    color: rgb(50, 50, 50);
+    color: rgb(250, 250, 250);
     margin-bottom: 20px;
 }
 
 .content h3 {
     font-size: 2.0em;
-    color: rgb(50, 50, 50);
+    color: rgb(250, 250, 250);
     margin-bottom: 20px;
 }
 
@@ -147,14 +211,15 @@ a:hover {
 
 .content pre {
     color: rgb(250, 250, 250);
-    background-color: rgb(90, 165, 235);
-    border-left: 2px solid rgb(67, 85, 179);
+    background-color: #3b4e60;
+    border-left: 2px solid #959cc2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 }
 
 pre code.hljs {
-    background-color: rgb(90, 165, 235);
+    background-color: #3b4e60;
+    color: rgb(230, 230, 230);
 }
 
 .hljs-comment {
@@ -162,11 +227,19 @@ pre code.hljs {
 }
 
 .hljs-keyword {
-    color: #ca0505 !important;
+    color: #44d8f0 !important;
 }
 
 .hljs-string {
     color: #c2d9f5 !important;
+}
+
+.hljs-literal {
+    color: #2e8fff !important;
+}
+
+.hljs-title {
+    color: #a675ff !important
 }
 
 .image-showcase {
@@ -228,11 +301,11 @@ pre code.hljs {
     @media screen and (max-width: 768px) {
         font-size: 1.0em;
     }
-    color: rgb(35, 55, 132);
+    color: #a2b4f9;
 }
 
 .feature-card i {
-    color: rgb(55, 190, 203);
+    color: #d0c736;
 }
 
 .other-downloads {
@@ -259,15 +332,15 @@ pre code.hljs {
 }
 
 .doc-copy-link i {
-    color: rgb(30, 55, 135);
+    color: #91a7df;
 }
 
 .doc-copy-link a {
-    color: rgb(0, 55, 190);
+    color: #91a7df;
 }
 
 .doc-copy-link a:hover {
-    color: rgb(0, 55, 190);
+    color: #91a7df;
     text-decoration: underline;
 }
 
@@ -289,6 +362,7 @@ pre code.hljs {
 .info-list-header-title {
     display: inline-block;
     font-size: 1.5em;
+    color: rgb(200, 200, 200);
 }
 
 .info-list-header-button {
@@ -297,7 +371,7 @@ pre code.hljs {
 }
 
 .info-list-content {
-    color: rgb(100, 100, 100);
+    color: rgb(150, 150, 150);
 }
 
 .extension-list {
@@ -315,12 +389,13 @@ pre code.hljs {
 }
 
 .showcase-section p {
+    color: rgb(250, 250, 250);
     font-size: 2.3em !important;
     margin-bottom: 59px !important;
 }
 
 .showcase-section a {
-    color: rgb(50, 92, 123);
+    color: rgb(200, 200, 200);
 }
 
 .showcase-section a:hover {
@@ -566,7 +641,7 @@ pre code.hljs {
 
 .is-font-medium {
     font-size: 1.3em;
-    color: rgb(50, 50, 50);
+    color: rgb(200, 200, 200);
 }
 
 .is-font-medium strong {

@@ -82,25 +82,25 @@ pause;
 
 Script files can be executed by running
 
-```
+```bash
 dnyAquaShell.exe "path/to/a/script.dnys" [opt:args]
 ```
 
 Arguments are optional, but can be provided if required.
 
-```
+```bash
 dnyAquaShell.exe "path/to/a/script.dnys" "A string with multiple words" 1234 false true 5.23
 ```
 
 In the context of a script, you can access the actual expressions as well as the argument count as follows:
 
-```
+```aquashell
 %argc: Amount of arguments
 %argv[num]: Actual argument expression
 ```
 
 If you have added the shell path to your environment PATH variable, then you can also perform actions from any directory as follows:
-```
+```bash
 aquashell [args]
 ```
 
@@ -115,7 +115,7 @@ The following command line arguments exist:
 
 You can run them via
 
-```
+```bash
 dnyAquaShell.exe -[cmd] [opt:args]
 ```
 
@@ -212,7 +212,7 @@ bool dnyAS_PluginLoad(dnyVersionInfo version, IShellPluginAPI* pInterfaceData, p
 
 When the plugin is available, the example commands would be used as follows:
 
-```
+```aquashell
 # Example of using mycommand
 mycommand "This will be printed";
 

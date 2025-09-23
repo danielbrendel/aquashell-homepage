@@ -31,27 +31,24 @@
 			@include('navbar.php')
 
 			@if ((isset($show_header)) && ($show_header))
-			<div class="header" style="background-image: url('{{ asset('img/header.jpg') }}');">
+			<div class="header" style="background-image: url('{{ asset('img/header.png') }}');">
 				<div class="header-overlay">
 					<div class="header-content">
-						<h1>AquaShell Scripting & Automation Shell</h1>
+						<h1>AquaShell</h1>
 
-							<h2>Automate tasks on Windows or develop complex scripted applications</h2>
+						<div class="header-badges">
+							<img src="https://img.shields.io/badge/os-windows-orange" alt="os-windows"/>
+							<img src="https://img.shields.io/badge/license-MIT-blue" alt="license-mit"/>
+							<img src="https://img.shields.io/badge/maintained-yes-green" alt="maintained-yes"/>
+						</div>
 
-							<div class="header-badges">
-								<img src="https://img.shields.io/badge/os-windows-orange" alt="os-windows"/>
-								<img src="https://img.shields.io/badge/license-MIT-blue" alt="license-mit"/>
-								<img src="https://img.shields.io/badge/maintained-yes-green" alt="maintained-yes"/>
+						<div class="header-buttons">
+							<div>
+								<a class="button is-info is-rounded is-outlined is-large" href="javascript:void(0);" onclick="window.vue.scrollTo('a[name=info]');">Read more</a>
 							</div>
 
-							<div class="header-buttons">
-								<div>
-									<a class="button is-link" href="javascript:void(0);" onclick="window.vue.scrollTo('a[name=info]');">Read more</a>
-								</div>
-
-								<div>
-									<a class="button is-success" href="{{ url('/download') }}">Download</a>
-								</div>
+							<div>
+								<a class="button is-success is-rounded is-outlined is-large" href="{{ url('/download') }}">Download</a>
 							</div>
 						</div>
 					</div>
@@ -102,6 +99,14 @@
 		<script>
 			document.addEventListener('DOMContentLoaded', function(){
 				window.vue.initNavbar();
+
+				document.body.addEventListener('scroll', function() {
+                    if ((document.body.scrollTop > document.getElementsByClassName('navbar')[0].offsetHeight + 10) || (document.documentElement.scrollTop > document.getElementsByClassName('navbar')[0].offsetHeight + 10)) {
+                        document.getElementsByClassName('navbar')[0].classList.add('navbar-background-color');  
+                    } else {
+                        document.getElementsByClassName('navbar')[0].classList.remove('navbar-background-color');
+                    }
+                });
 
 				window.hljs.registerLanguage('aquashell', function() {
 					return {
