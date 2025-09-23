@@ -17,5 +17,11 @@ return [
         'url' => 'https://www.producthunt.com/products/aquashell',
         'logo' => asset('img/producthunt.png'),
         'name' => 'Product Hunt'
+    ],
+
+    [
+        'url' => 'https://news.ycombinator.com/item?id=45294565',
+        'logo' => asset('img/hacker-news.png'),
+        'name' => 'HackerNews'
     ]
 ];

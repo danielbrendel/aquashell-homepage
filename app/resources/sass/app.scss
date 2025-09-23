@@ -404,13 +404,14 @@ pre code.hljs {
 }
 
 .showcase-section a:hover {
-    color: rgb(50, 92, 123);
+    color: rgb(123, 190, 235);
     text-decoration: none;
 }
 
 .showcase-item {
     position: relative;
     display: inline-block;
+    min-width: 340px;
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 30px;
