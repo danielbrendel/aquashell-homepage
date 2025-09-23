@@ -24,6 +24,7 @@
         <script src="{{ asset('js/vue.min.js') }}"></script>
         @endif
 		<script src="{{ asset('js/fontawesome.js') }}"></script>
+		<script src="{{ asset('js/app.js') }}"></script>
 	</head>
 	
 	<body>
@@ -70,7 +71,6 @@
 			</div>
 		</div>
 
-		<script src="{{ asset('js/app.js') }}"></script>
 		<script>
 			document.addEventListener('DOMContentLoaded', function(){
 				window.vue.initNavbar();
