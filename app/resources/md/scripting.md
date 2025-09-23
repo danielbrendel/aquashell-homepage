@@ -172,12 +172,13 @@ unset @classInstance;
 6) Commands
 The script user can implement own script commands which can retrieve arguments
 and also return a value. 
-#A void command:
 ```aquashell
+#A void command:
 myCommand "stringarg"
 ```
-#A value-returning command:
+
 ```aquashell
+#A value-returning command:
 global myStorageVar type;
 myRetValCommand "stringarg" myStorageVar;
 ```

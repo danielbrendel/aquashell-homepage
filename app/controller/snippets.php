@@ -25,9 +25,11 @@ class SnippetsController extends BaseController {
 	public function index($request)
 	{
         $categories = CategoriesModel::getAll();
+		$snippets = SnippetsModel::getAll();
 
 		return parent::view(['content', 'snippets/categories'], [
-			'categories' => $categories
+			'categories' => $categories,
+			'snippets' => $snippets
 		]);
 	}
 

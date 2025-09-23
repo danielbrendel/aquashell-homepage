@@ -344,6 +344,11 @@ pre code.hljs {
     text-decoration: underline;
 }
 
+#documentation-aquashell code:not(.hljs) {
+    background-color: rgb(32, 32, 32);
+    border-radius: 5px;
+}
+
 .info-list {
     position: relative;
 }

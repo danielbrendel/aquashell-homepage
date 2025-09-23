@@ -29,32 +29,7 @@
 	<body>
 		<div id="main">
 			@include('navbar.php')
-
-			@if ((isset($show_header)) && ($show_header))
-			<div class="header" style="background-image: url('{{ asset('img/header.png') }}');">
-				<div class="header-overlay">
-					<div class="header-content">
-						<h1>AquaShell</h1>
-
-						<div class="header-badges">
-							<img src="https://img.shields.io/badge/os-windows-orange" alt="os-windows"/>
-							<img src="https://img.shields.io/badge/license-MIT-blue" alt="license-mit"/>
-							<img src="https://img.shields.io/badge/maintained-yes-green" alt="maintained-yes"/>
-						</div>
-
-						<div class="header-buttons">
-							<div>
-								<a class="button is-info is-rounded is-outlined is-large" href="javascript:void(0);" onclick="window.vue.scrollTo('a[name=info]');">Read more</a>
-							</div>
-
-							<div>
-								<a class="button is-success is-rounded is-outlined is-large" href="{{ url('/download') }}">Download</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			@endif
+			@include('header.php')
 
 			<div class="container">
 				<div class="columns">
@@ -112,7 +87,7 @@
 					return {
 						case_insensitive: false,
 						keywords: {
-							keyword: 'global const set if function elseif else for while local result unset call class method member construct destruct require exec run cwd gwd getscriptpath getscriptname textview random sleep bitop gettickcount timestamp fmtdatetime getsystemerror setsystemerror threadfunc hideconsole listlibs print sys pause exit quit',
+							keyword: 'global const set if function elseif else for while local result unset call class method member construct destruct require exec run cwd gwd getscriptpath getscriptname debug textview random sleep bitop gettickcount timestamp fmtdatetime getsystemerror setsystemerror threadfunc hideconsole listlibs print sys pause exit quit',
 							literal: 'bool int float string void true false',
 						},
 						contains: [

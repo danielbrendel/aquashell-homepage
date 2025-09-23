@@ -529,8 +529,12 @@ ini_delete "path/to/file.ini" "section" "key"; #Removes the key from the section
 This plugin provides commands in order to connect and communicate with an IRC server
 ```aquashell
 irc_spawn "identifier" "host" "port" "result var"; # Attempts to connect to an IRC server
+
 irc_isvalid "identifier" "boolean result var"; # Indicates whether the identifier is linked to a valid (and connected) IRC object instance
+
 irc_process "opt:identifier"; # Processes the IRC object. If no identifier is specified then it processes all existing IRC objects. 
+
 irc_send "identifier" "message"; # Attempts to send a message to the server associated with the given object instance
+
 irc_release "identifier"; # Releases the IRC object instance which results in closing the connection.
 ```
