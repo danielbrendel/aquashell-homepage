@@ -14,7 +14,7 @@ class SitemapModule {
             $sitemap = [
                 '/',
                 '/download',
-                '/examples',
+                '/snippets',
                 '/plugins',
                 '/documentation',
                 '/tutorials'
