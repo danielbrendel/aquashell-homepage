@@ -4,6 +4,8 @@
         <div class="header-content">
             <h1>AquaShell</h1>
 
+            <h2>The Open-source Scripting Environment for Windows</h2>
+
             <div class="header-badges">
                 <img src="https://img.shields.io/badge/os-windows-orange?style=for-the-badge" alt="os-windows"/>
                 <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" alt="license-mit"/>

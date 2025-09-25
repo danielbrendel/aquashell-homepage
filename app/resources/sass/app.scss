@@ -68,12 +68,12 @@ strong {
 }
 
 .navbar-background-color {
-    background-color: #3273dc !important;
+    background-color: rgb(50, 111, 220) !important;
 }
 
 .navbar-menu {
     @media screen and (max-width: 1089px) {
-        background-color: #3273dc !important;
+        background-color: rgb(50, 111, 220) !important;
     }
 }
 
@@ -143,7 +143,7 @@ a.navbar-burger:hover {
 }
 
 .header-content h1 {
-    color: #fff5a4;
+    color: rgb(255, 245, 163);
     font-family: Quicksand, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     font-weight: bold;
     font-size: 10.0em;
@@ -153,8 +153,26 @@ a.navbar-burger:hover {
     @media screen and (max-width: 432px) {
         font-size: 4.0em;
     }
-    text-shadow: 0 0 5px #3ebbd5, 0 0 10px #3ebbd5, 0 0 20px #3ebbd5, 0 0 40px #3ebbd5, 0 0 80px #3ebbd5;
-    margin-bottom: 35px;
+    text-shadow: 0 0 5px rgb(63, 185, 215), 0 0 10px rgb(63, 185, 215), 0 0 20px rgb(63, 185, 215), 0 0 40px rgb(63, 185, 215), 0 0 80px rgb(63, 185, 215);
+    margin-bottom: 5px;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 35px;
+    }
+}
+
+.header-content h2 {
+    color: rgb(255, 245, 163);
+    font-family: Quicksand, BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 2.0em;
+    @media screen and (max-width: 432px) {
+        font-size: 1.5em;
+    }
+    text-shadow: 0 0 5px rgb(63, 185, 215), 0 0 10px rgb(63, 185, 215), 0 0 20px rgb(63, 185, 215), 0 0 40px rgb(63, 185, 215), 0 0 80px rgb(63, 185, 215);
+    margin-bottom: 73px;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 59px;
+    }
 }
 
 .header-buttons div {
@@ -167,12 +185,34 @@ a.navbar-burger:hover {
     margin-right: 3px;
 }
 
+.header-buttons a.button {
+    @media screen and (max-width: 410px) {
+        font-size: 1.2em;
+    }
+}
+
+.header-buttons a.button.is-info {
+    background-color: rgba(32, 155, 235, 0.3) !important;
+}
+
+.header-buttons a.button.is-info:hover {
+    background-color: rgb(32, 155, 235) !important;
+}
+
+.header-buttons a.button.is-success {
+    background-color: rgba(35, 205, 100, 0.3) !important;
+}
+
+.header-buttons a.button.is-success:hover {
+    background-color: rgb(35, 205, 100) !important;
+}
+
 .header-content a {
     width: 100%;
 }
 
 .header-badges {
-    margin-bottom: 50px;
+    margin-bottom: 63px;
 }
 
 .header-badges img {
@@ -213,35 +253,35 @@ a.navbar-burger:hover {
 
 .content pre {
     color: rgb(250, 250, 250);
-    background-color: #3b4e60;
-    border-left: 2px solid #959cc2;
+    background-color: rgb(59, 79, 100);
+    border-left: 2px solid rgb(150, 155, 195);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 }
 
 pre code.hljs {
-    background-color: #3b4e60;
+    background-color: rgb(59, 79, 100);
     color: rgb(230, 230, 230);
 }
 
 .hljs-comment {
-    color: rgb(136, 228, 148) !important;
+    color: rgb(135, 230, 150) !important;
 }
 
 .hljs-keyword {
-    color: #44d8f0 !important;
+    color: rgb(69, 215, 235) !important;
 }
 
 .hljs-string {
-    color: #c2d9f5 !important;
+    color: rgb(195, 220, 245) !important;
 }
 
 .hljs-literal {
-    color: #2e8fff !important;
+    color: rgb(45, 143, 255) !important;
 }
 
 .hljs-title {
-    color: #a675ff !important
+    color: rgb(185, 150, 253) !important;
 }
 
 .image-showcase {
@@ -303,11 +343,11 @@ pre code.hljs {
     @media screen and (max-width: 768px) {
         font-size: 1.0em;
     }
-    color: #a2b4f9;
+    color: rgb(162, 180, 250);
 }
 
 .feature-card i {
-    color: #d0c736;
+    color: rgb(203, 200, 55);
 }
 
 .other-downloads {
@@ -334,15 +374,15 @@ pre code.hljs {
 }
 
 .doc-copy-link i {
-    color: #91a7df;
+    color: rgb(145, 167, 223);
 }
 
 .doc-copy-link a {
-    color: #91a7df;
+    color: rgb(145, 167, 223);
 }
 
 .doc-copy-link a:hover {
-    color: #91a7df;
+    color: rgb(145, 167, 223);
     text-decoration: underline;
 }
 
@@ -447,7 +487,17 @@ pre code.hljs {
 }
 
 .sponsoring {
+    position: relative;
+    display: inline-block;
     margin-top: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.sponsoring iframe {
+    width: 150px;
+    height: 32px;
+    transform: scale(1.2);
 }
 
 .snippets-categories {
