@@ -8,7 +8,7 @@ html, body {
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    background-color: rgb(50, 50, 50);
+    background-color: rgb(25, 35, 55);
     overflow-x: hidden !important;
 }
 
@@ -124,7 +124,7 @@ a.navbar-burger:hover {
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
-    mask-image: linear-gradient(to bottom, rgb(30, 30, 30) 90%, rgba(30, 30, 30, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgb(30, 30, 30) 99%, rgba(30, 30, 30, 0) 100%);
 }
 
 .header-overlay {
@@ -343,7 +343,7 @@ pre code.hljs {
     @media screen and (max-width: 768px) {
         font-size: 1.0em;
     }
-    color: rgb(162, 180, 250);
+    color: rgb(120, 190, 255);
 }
 
 .feature-card i {
@@ -387,7 +387,8 @@ pre code.hljs {
 }
 
 #documentation-aquashell code:not(.hljs) {
-    background-color: rgb(32, 32, 32);
+    color: rgb(250, 250, 250);
+    background-color: rgb(32, 63, 111);
     border-radius: 5px;
 }
 
@@ -514,13 +515,13 @@ pre code.hljs {
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 10px;
-    background-color: rgb(79, 150, 190);
+    background-color: rgb(35, 52, 80);
     color: rgb(250, 250, 250);
     border-radius: 5px;
 }
 
 .snippets-category:hover {
-    background-color: rgb(101, 165, 202);
+    background-color: rgb(50, 73, 109);
 }
 
 .snippets-category-icon {
@@ -528,7 +529,7 @@ pre code.hljs {
     display: inline-block;
     min-width: 123px;
     text-align: center;
-    background-color: rgb(55, 111, 145);
+    background-color: rgb(55, 105, 132);
     padding: 20px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -650,11 +651,13 @@ pre code.hljs {
 }
 
 .footer-content a {
-    color: rgb(165, 192, 255);
+    color: rgb(235, 235, 235);
+    font-weight: bold;
 }
 
 .footer-content a:hover {
-    color: rgb(165, 192, 255);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
     text-decoration: underline;
 }
 
