@@ -21,7 +21,7 @@ return [
 
     [
         'url' => 'https://news.ycombinator.com/item?id=45294565',
-        'logo' => asset('img/hacker-news.png'),
+        'logo' => asset('img/hackernews.png'),
         'name' => 'HackerNews'
     ]
 ];
