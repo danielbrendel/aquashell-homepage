@@ -16,9 +16,12 @@ class SitemapModule {
                 '/download',
                 '/snippets',
                 '/plugins',
-                '/documentation',
-                '/tutorials'
+                '/documentation'
             ];
+
+            if (env('APP_ENABLETUTORIALS')) {
+                $sitemap[] = '/tutorials';
+            }
 
             $xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{%URLS%}</urlset>';
             $node = '<url><loc>{%URL%}</loc></url>';
