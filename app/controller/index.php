@@ -79,10 +79,14 @@ class IndexController extends BaseController {
 	 * Handles URL: /tutorials
 	 * 
 	 * @param Asatru\Controller\ControllerArg $request
-	 * @return Asatru\View\ViewHandler
+	 * @return Asatru\View\ViewHandler|Asatru\View\RedirectHandler
 	 */
 	public function tutorials($request)
 	{
+		if (!env('APP_ENABLETUTORIALS')) {
+			return redirect('/');
+		}
+
 		$tutorials = TutorialsModel::getAll();
 		
 		return parent::view(['content', 'tutorials'], [

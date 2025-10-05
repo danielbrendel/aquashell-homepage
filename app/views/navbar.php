@@ -33,7 +33,7 @@
                 Documentation
             </a>
 
-            @if (TutorialsModel::count()->get() > 0)
+            @if (env('APP_ENABLETUTORIALS'))
             <a class="navbar-item navbar-item-padding" href="{{ url('/tutorials') }}">
                 Tutorials
             </a>
