@@ -24,7 +24,7 @@
         <script src="{{ asset('js/vue.min.js') }}"></script>
         @endif
 		<script src="{{ asset('js/fontawesome.js') }}"></script>
-		<script src="{{ asset('js/app.js') }}"></script>
+		<script src="{{ asset('js/app.js', true) }}"></script>
 	</head>
 	
 	<body>
