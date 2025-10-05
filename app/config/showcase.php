@@ -10,7 +10,8 @@ return [
     [
         'url' => 'https://www.libhunt.com/r/dnyAquaShell',
         'logo' => asset('img/libhunt.png'),
-        'name' => 'LibHunt'
+        'name' => 'LibHunt',
+        'classes' => 'showcase-item-fix-alignment'
     ],
 
     [

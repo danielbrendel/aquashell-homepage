@@ -63,7 +63,7 @@
 
 		@foreach ($showcase as $sc_item)
 		<a href="{{ $sc_item->url }}">
-			<div class="showcase-item">
+			<div class="showcase-item {{ (isset($sc_item->classes) ? $sc_item->classes : '') }}">
 				<div class="showcase-item-logo">
 					<img src="{{ $sc_item->logo }}" alt="logo">
 				</div>
