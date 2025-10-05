@@ -46,6 +46,20 @@ class SnippetsModel extends \Asatru\Database\Model {
     }
 
     /**
+     * @param $id
+     * @return mixed
+     * @throws \Exception
+     */
+    public static function getFromId($id)
+    {
+        try {
+            return static::raw('SELECT * FROM `@THIS` where id = ?', [$id])->first();
+        } catch (\Exception $e) {
+            throw $e;
+        }
+    }
+
+    /**
      * @param $code
      * @return string
      * @throws \Exception

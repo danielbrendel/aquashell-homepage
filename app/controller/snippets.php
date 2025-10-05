@@ -49,4 +49,23 @@ class SnippetsController extends BaseController {
 			'snippets' => $snippets
 		]);
 	}
+
+	/**
+	 * Handles URL: /snippets/show/{id}/{slug}
+	 * 
+	 * @param Asatru\Controller\ControllerArg $request
+	 * @return Asatru\View\ViewHandler
+	 */
+	public function show($request)
+	{
+		$id = $request->arg('id');
+        $slug = $request->arg('slug');
+		
+		$snippet = SnippetsModel::getFromId($id);
+
+		return parent::view(['content', 'snippets/show'], [
+			'snippet' => $snippet,
+			'slug' => $slug
+		]);
+	}
 }

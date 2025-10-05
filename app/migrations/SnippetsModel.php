@@ -29,7 +29,8 @@ class SnippetsModel_Migration {
         $this->database->drop();
         $this->database->add('id INT NOT NULL AUTO_INCREMENT PRIMARY KEY');
         $this->database->add('category INT NOT NULL');
-        $this->database->add('description VARCHAR(512) NOT NULL');
+        $this->database->add('title VARCHAR(512) NOT NULL');
+        $this->database->add('description TEXT NULL');
         $this->database->add('snippet TEXT NOT NULL');
         $this->database->add('created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP');
         $this->database->create();

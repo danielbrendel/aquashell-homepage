@@ -21,6 +21,7 @@ return [
     array('/download', 'GET', 'index@download'),
     array('/snippets', 'GET', 'snippets@index'),
     array('/snippets/category/{name}', 'GET', 'snippets@listing'),
+    array('/snippets/show/{id}/{slug}', 'GET', 'snippets@show'),
     array('/plugins', 'GET', 'index@plugins'),
     array('/documentation', 'GET', 'index@documentation'),
     array('/tutorials', 'GET', 'index@tutorials'),
