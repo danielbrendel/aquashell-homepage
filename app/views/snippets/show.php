@@ -11,7 +11,7 @@
 
     <div class="is-vertical-margin">
         <div class="is-inline-block">
-            <a class="button is-info" href="javascript:void(0);" onclick="window.vue.copyToClipboard(document.querySelector('.language-aquashell').innerText, 'Snippet code has been copied to clipboard');">Copy to clipboard</a>
+            <a class="button is-info" href="javascript:void(0);" onclick="window.vue.copyToClipboard(document.querySelector('.language-aquashell').innerText, 'Snippet code has been copied to clipboard');">Copy code</a>
         </div>
 
         <div class="is-inline-block">
