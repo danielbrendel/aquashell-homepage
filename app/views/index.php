@@ -10,7 +10,7 @@
 	</p>
 
 	<p>
-		AquaShell is opensourced software released under the MIT license. This ensures full transparency and allows you to contribute.
+		AquaShell is open-sourced software released under the MIT license. This ensures full transparency and allows you to contribute.
 		We welcome you to provide feedback and report bugs as well as create your own plugins to enhance the shell functionality. 
 		If you need help with creating scripts, feel free to create an issue on GitHub.
 	</p>
@@ -44,7 +44,7 @@
 			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Integration with Windows</div>
 			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Fast Windows automation</div>
 			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Complex scripted applications</div>
-			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;OpenSource project</div>
+			<div class="feature-card"><i class="fas fa-star"></i>&nbsp;Open-source project</div>
 		</div>
 
 		<div class="feature-cards-block feature-cards-block-fix">
