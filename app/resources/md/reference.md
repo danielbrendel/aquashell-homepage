@@ -228,6 +228,12 @@ aut_sendmessage "hwnd" "msg" "wparam" "lparam" "result var"; #Sends the given me
 
 aut_postmessage "hwnd" "msg" "wparam" "lparam" "result var"; #Posts the given message with params to the given window. Will return true if the given message was put into the posting queue, not the actual result from the target window. 
 
+aut_getwindowlong "hwnd" "index" "result var"; # Gets the numeric value of the index type of the specified window and stores it into the result var
+
+aut_setwindowlong "hwnd" "index" "new value" "result var"; # Stores the given index type value for the specified window and returns the old value of the given index type
+
+aut_updatewindow "hwnd" "result var"; # Performs a window update of the given window and stores the operation result into the result var
+
 aut_clpbsetstring "text"; #Stores the given expression as text in the clipboard
 
 aut_clpbgetstring "result var"; #Stores the current clipboard data as text in the result var
@@ -236,17 +242,22 @@ aut_clpbclear; #Clears the clipboard data regardless of the content type
 
 aut_addtimer "ident" "delay"; #Adds a timer where the callback function is executed each N milliseconds. The callback function is of following schema: function ident_OnElapsed bool() {}; Its return value indicates if the timer shall be removed or stay processed
 
-aut_timerexists "timer ident" "result var"; #Indicates if a timer with the given ident exists.
+aut_timerexists "timer ident" "result var"; #Indicates if a timer with the given ident exists
+
+aut_cleartimer "timer ident"; #Clears a timer and its associated resources
 
 aut_procevents; #Call this in your main loop in order to process all your hooks
 
 aut_calctimers; #Call this in your main loop in order to process all timers
 ```
 
-### EnvVars
-This plugin provides all environment variables to the scripting system. It does not provide any further functions, but just makes
-the variables available. For example you will then have the variable %windir or %USERNAME available. What variables actually are available
-depends on your Windows system and settings
+### Env
+This plugin provides all environment variables to the scripting system. It does also provide a few related commands
+```aquashell
+env_getvariable "name" "result var"; # Tries to get the value of the given variable name and stores it into the result var
+
+env_setvariable "name" "value" "result var"; # Sets the given environment variable value and stores the operation result into the result var
+```
 
 ### Events
 The events plugin allows you to register events and then trigger them on any desired occassion.
@@ -311,6 +322,8 @@ wnd_spawnform "form name" "form title text" x y width height "result var"; #Crea
 wnd_setformpos "form handle" x y; #Sets the new form position
 
 wnd_setformres "form handle" w h; #Sets the new form resolution
+
+wnd_setformcentered "form handle"; #Centers the form to screen
 
 wnd_setformtitle "form handle" "new title"; #Updates the form title with the given text
 
@@ -427,12 +440,22 @@ wnd_getcurrentfocus "result var"; Get window handle of window or control that cu
 wnd_freeform "form handle"; #Frees the form and all attached controls
 ```
 
-### Input
+### Dialog
 The InputBox plugin provides both a command and a function to graphically receive input expressions from the user.
 ```aquashell
 input "target var" "A descriptive text"; #Prompts the user to input text that is stored into the var
 
 inputbox "title of inputbox" "label/description text" "default expression" xpos ypos "name of result var"; #Prompts the user via GUI and returns the input to the script
+
+opendialog "options" "result var"; # Shows an open file or folder dialog depending on the options. Result file name is stored into the var
+
+savedialog "options" "default name" "file spec" "result var"; # Shows a save file or folder dialog depending on the options. Stores the object name into the result var
+
+msgbox "text" "title" "type" "handle" "result var"; # Shows a message box with the given data. Stores the result into the result var
+
+msgbeep "type"; # Plays a message beep sound depending on the provided type
+
+sndbeep "frequency" "duration"; # Plays a beep sound with the given frequency and duration
 ```
 
 ### NetClient
