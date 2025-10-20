@@ -3,7 +3,7 @@
 * User-friendly scripting syntax
 * Interface between script engine and engine user
 * Default internal commands
-* Sticks to C++ STD in order to provide compatibility
+* Sticks to the C++ Standard Library for compatibility purposes
  
 ## Syntax:
 The script language is a command-based language. This makes the syntax be as follows:
