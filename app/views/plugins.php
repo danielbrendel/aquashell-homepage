@@ -39,11 +39,11 @@
 
             <div class="info-list-item">
                 <div class="info-list-header">
-                    <div class="info-list-header-title">EnvVars</div>
+                    <div class="info-list-header-title">Env</div>
                     <div class="info-list-header-button"><span class="button is-warning is-not-clickable">System</span></div>
                 </div>
 
-                <div class="info-list-content">Exposes all environment variables to the script context.</div>
+                <div class="info-list-content">Provides access to environment variables</div>
             </div>
 
             <div class="info-list-item">
@@ -75,11 +75,11 @@
 
             <div class="info-list-item">
                 <div class="info-list-header">
-                    <div class="info-list-header-title">Input</div>
+                    <div class="info-list-header-title">Dialog</div>
                     <div class="info-list-header-button"><span class="button is-primary is-not-clickable">UI</span></div>
                 </div>
 
-                <div class="info-list-content">This component provides input methods via CLI and GUI.</div>
+                <div class="info-list-content">This component provides dialog commands via CLI and GUI.</div>
             </div>
 
             <div class="info-list-item">
