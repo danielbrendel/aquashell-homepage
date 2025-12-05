@@ -123,6 +123,15 @@
 
                 <div class="info-list-content">A Counter-Strike 1.6 Retroboard that uses DirectX for rendering and sound management</div>
             </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">AquaPhoto: Photo bot for Discord</div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/aquaphoto-bot">Download</a></div>
+                </div>
+
+                <div class="info-list-content">A Discord bot that randomly posts photos to a discord channel, once per day, with history.</div>
+            </div>
         </div>
     </div>
 </div>
