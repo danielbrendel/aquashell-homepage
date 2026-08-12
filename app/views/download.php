@@ -132,6 +132,15 @@
 
                 <div class="info-list-content">A Discord bot that randomly posts photos to a discord channel, once per day, with history.</div>
             </div>
+
+            <div class="info-list-item">
+                <div class="info-list-header">
+                    <div class="info-list-header-title">AquaNovel: Sample Visual Novel</div>
+                    <div class="info-list-header-button"><a class="button is-link" href="https://github.com/danielbrendel/aquanovel-game">Download</a></div>
+                </div>
+
+                <div class="info-list-content">A sample visual novel game written in dnyScript for AquaShell</div>
+            </div>
         </div>
     </div>
 </div>
